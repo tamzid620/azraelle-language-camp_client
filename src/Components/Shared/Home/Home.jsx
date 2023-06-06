@@ -1,3 +1,4 @@
+import Accordion from "./Accordion";
 import Banner from "./Banner";
 import Info from "./Info";
 
@@ -17,8 +18,8 @@ const Home = () => {
             {/* Popular Instructors section ----------------------- */}
 
 
-            {/*  section ----------------------- */}
-
+            {/* Accordion   section ----------------------- */}
+            <Accordion></Accordion>
 
         </div>
     );

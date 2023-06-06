@@ -5,9 +5,9 @@ import infoimg4 from '../../../../src/assets/icons/message.jpg'
 
 const Info = () => {
     return (
-        <div className='grid sm:grid-cols-1 xl:grid-cols-4 py-9 my-20 bg-blue-200'>
+        <div className='grid sm:grid-cols-1 lg:grid-cols-4 py-9 my-20 bg-blue-200'>
 
-            <div className='flex '>
+            <div className='flex mb-5'>
                 <div className='pe-5'>
                     <img className='w-[60px]' src={infoimg1} alt="" />
                 </div>
@@ -19,7 +19,7 @@ const Info = () => {
 
 
 
-            <div className='flex '>
+            <div className='flex mb-5'>
                 <div className='pe-5'>
                     <img className='w-[60px]' src={infoimg2} alt="" />
                 </div>
@@ -31,7 +31,7 @@ const Info = () => {
 
 
 
-            <div className='flex '>
+            <div className='flex mb-5'>
                 <div className='pe-5'>
                     <img className='w-[60px]' src={infoimg3} alt="" />
                 </div>
