@@ -1,6 +1,37 @@
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import app from "../../../firebase/firebase.config";
+import Swal from "sweetalert2";
 
+const auth = getAuth();
 const Navbar = () => {
+
+    const [user, setUser] = useState({});
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setUser(user);
+        });
+        return () => {
+            unsubscribe();
+        };
+    }, []);
+
+    const logOut = () => {
+        signOut(auth)
+            .then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Login SuccessFully',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            })
+            .catch((error) => {
+                
+            });
+    };
 
     const header =
         <>
@@ -29,9 +60,24 @@ const Navbar = () => {
                         {header}
                     </ul>
                 </div>
-                <div className="navbar-end">
-                    <button className="btn">Button</button>
+
+                <div className="navbar-end flex gap-2">
+                    {user ? (
+                        <>
+                            <div className="w-10 rounded-full">
+                                <img className="w-10 rounded-full" src={user.photoURL} alt="User" />
+                            </div>
+                            <button onClick={logOut} className="btn bg-blue-600 text-white">
+                                Log out
+                            </button>
+                        </>
+                    ) : (
+                        <Link to="/login">
+                            <button className="btn bg-blue-600 text-white">Log In</button>
+                        </Link>
+                    )}
                 </div>
+
             </div>
         </div>
     );
