@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import './Login.css';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
@@ -12,16 +12,22 @@ const Login = () => {
 
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit } = useForm();
-    const { signIn , googleSignIn } = useContext(AuthContext);
+    const { signIn, googleSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+
+    const from = location.state?.from?.pathname || "/";
 
     const onSubmit = (data) => {
         const { email, password } = data;
 
-//  Email Password  Login ----------------------------------
+        //  Email Password  Login ----------------------------------
         signIn(email, password)
             .then((result) => {
                 const user = result.user;
                 console.log(user)
+                navigate(from, { replace: true });
                 Swal.fire({
                     icon: 'success',
                     title: 'Login SuccessFully',
@@ -36,43 +42,44 @@ const Login = () => {
                     title: 'Oops...',
                     text: 'Login Failed!',
                     footer: 'Please Login Again'
-                  })
+                })
             });
     };
 
     //  Google Login ----------------------------------
-  const googleLogin = () => {
-    googleSignIn( GoogleAuthProvider)
-      .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
-        Swal.fire({
-            icon: 'success',
-            title: 'Login SuccessFully with Google ',
-            showConfirmButton: false,
-            timer: 1500
-        })
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.customData.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Login Failed!',
-            footer: 'Please Login Again'
-          })
-      });
-  };
+    const googleLogin = () => {
+        googleSignIn(GoogleAuthProvider)
+            .then((result) => {
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                const user = result.user;
+                navigate(from, { replace: true });
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registration SuccessFully with Google ',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.customData.email;
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Registration Failed!',
+                    footer: 'Please Registration Again'
+                })
+            });
+    };
 
     return (
         <div>
             <form className="login-form mx-auto my-20" onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="font-bold text-2xl">Please Login</h2>
-{/* Email input  */}
+                {/* Email input  */}
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <input
@@ -81,11 +88,11 @@ const Login = () => {
                         {...register('email', { required: true })}
                     />
                 </div>
-{/* password input  */}
+                {/* password input  */}
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <div className="password-input">
-                    <input
+                        <input
                             type={showPassword ? 'text' : 'password'}
                             id="password"
                             {...register('password', { required: true })}
@@ -93,17 +100,17 @@ const Login = () => {
                         <i className="fa fa-eye" onClick={() => setShowPassword(!showPassword)}>Show Password</i>
                     </div>
                 </div>
-{/* submit input  */}
+                {/* submit input  */}
                 <div className="form-group bg-blue-300">
                     <input type="submit" value="Login" />
                 </div>
-{/* go to register page option  */}
+                {/* go to register page option  */}
                 <div className="form-group">
                     <p>Don't have an account?</p>
                     <Link to="/register"><a>Register</a></Link>
                 </div>
-{/* google login option  */}
-                    <hr />
+                {/* google login option  */}
+                <hr />
                 <div className='flex justify-center mt-3'>
                     <button onClick={() => googleLogin()}><FcGoogle className='w-[50px] h-[50px]'></FcGoogle></button>
                 </div>

@@ -1,0 +1,142 @@
+[
+    {
+        "class_image": "https://img.freepik.com/free-vector/hand-drawn-english-book-background_23-2149483336.jpg?w=740&t=st=1686152325~exp=1686152925~hmac=7a7e46b0149902759e4fd191be25632e2ed5df7525bc0016bd68c21a4d8f85ae",
+        "class_name": "English",
+        "available_seats": 20,
+        "class_price": 99.99,
+        "instructor_image": "https://www.celebrityspeakers.com.au/content/uploads/2020/12/Dr-John-Smith-1-website.jpeg",
+        "instructor_name": "John Smith",
+        "instructor_email": "johnsmith@example.com",
+        "num_classes_taken": 50,
+        "classes_taken": [
+            "Introduction to English",
+            "Advanced Grammar"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/free-vector/students-characters-learning-spanish-foreign-language-course_87771-10536.jpg?w=740&t=st=1686152442~exp=1686153042~hmac=8dce0db3975d13111424bdab070e99c7203e2facd3e06fc02439f391eb70d369",
+        "class_name": "Spanish",
+        "available_seats": 15,
+        "class_price": 149.99,
+        "instructor_image": "https://faculty.mdanderson.org/content/dam/mdanderson/images/fis/alma_rodriguez.jpg.resize.405.575.high.jpg",
+        "instructor_name": "Maria Rodriguez",
+        "instructor_email": "mariarodriguez@example.com",
+        "num_classes_taken": 40,
+        "classes_taken": [
+            "Basic Conversation",
+            "Intermediate Writing"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/free-vector/french-lesson-with-tutor-teacher-banner_570502-42.jpg?w=740&t=st=1686152575~exp=1686153175~hmac=8d2d97127f73b0e9e38ea835f6511d99134641c59e2dc4071b2bb5e043cbbc68",
+        "class_name": "French",
+        "available_seats": 12,
+        "class_price": 199.99,
+        "instructor_image": "https://d2mjvz2lqjkhe7.cloudfront.net/as/assets-mem-com/cmi/0/7/9/8/6868970/20160331_092015247_0_orig.jpg/-/jean-pierre-leclerc-saint-hubert-qc-obituary.jpg?crop=%2810.628440366972476%2C4.549019607843137%2C270.26605504587155%2C386.66666666666663%29&cropxunits=331&cropyunits=464&a.balancewhite=true&maxheight=650",
+        "instructor_name": "Jean-Pierre Leclerc",
+        "instructor_email": "jeanpierre@example.com",
+        "num_classes_taken": 30,
+        "classes_taken": [
+            "French Pronunciation",
+            "Advanced Speaking"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/premium-vector/isometric-online-german-language-courses_88272-2140.jpg?w=740",
+        "class_name": "German",
+        "available_seats": 18,
+        "class_price": 129.99,
+        "instructor_image": "https://marvel-b1-cdn.bc0a.com/f00000000283318/faculty-directory.dartmouth.edu/sites/faculty_directory.prod/files/styles/profile_portrait/public/20190620_meuller_eb_002.jpg?itok=wqOUxg0p",
+        "instructor_name": "Hans Müller",
+        "instructor_email": "hansmueller@example.com",
+        "num_classes_taken": 35,
+        "classes_taken": [
+            "German Vocabulary",
+            "Business German"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/premium-vector/online-italian-language-courses-remote-school-university-concept_88272-2200.jpg?w=740",
+        "class_name": "Italian",
+        "available_seats": 25,
+        "class_price": 89.99,
+        "instructor_image": "https://www.pretpro.fr/wp-content/uploads/2021/03/Giulia-BIANCHI-.jpg",
+        "instructor_name": "Giulia Bianchi",
+        "instructor_email": "giuliabianchi@example.com",
+        "num_classes_taken": 45,
+        "classes_taken": [
+            "Italian Grammar",
+            "Conversational Italian"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/premium-vector/learn-chinese-language-study-foreign-languages-website-laptop-concept-online-education_530733-3125.jpg?w=740",
+        "class_name": "Chinese",
+        "available_seats": 20,
+        "class_price": 149.99,
+        "instructor_image": "http://eyesurgeons.com.sg/assets/Dr-Heng-Li-Wei.jpg",
+        "instructor_name": "Li Wei",
+        "instructor_email": "liwei@example.com",
+        "num_classes_taken": 50,
+        "classes_taken": [
+            "Chinese Characters",
+            "Intermediate Chinese"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/premium-vector/japanese-learning-concept_277904-9314.jpg?w=740",
+        "class_name": "Japanese",
+        "available_seats": 15,
+        "class_price": 109.99,
+        "instructor_image": "https://cdn-eu.anidb.net/images/main/206419.jpg",
+        "instructor_name": "Yuki Tanaka",
+        "instructor_email": "yukitanaka@example.com",
+        "num_classes_taken": 35,
+        "classes_taken": [
+            "Introduction to Japanese",
+            "Hiragana and Katakana"
+        ]
+    },
+    {
+        "class_image": "https://previews.123rf.com/images/luplupme/luplupme2004/luplupme200400080/144029403-learning-russian-language-vector-illustration-cartoon-flat-tiny-student-people-learn-russian-in.jpg",
+        "class_name": "Russian",
+        "available_seats": 22,
+        "class_price": 139.99,
+        "instructor_image": "https://upload.wikimedia.org/wikipedia/commons/8/89/2011-09-21_%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%98%D0%B2%D0%B0%D0%BD%D0%BE%D0%B2.jpeg",
+        "instructor_name": "Sergei Ivanov",
+        "instructor_email": "sergeiivanov@example.com",
+        "num_classes_taken": 48,
+        "classes_taken": [
+            "Russian Pronunciation",
+            "Russian Literature"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/free-vector/arabic-lesson-with-tutor-teacher-vector_570502-53.jpg?w=740&t=st=1686152998~exp=1686153598~hmac=ea5327442918ba5aea0eae94d7386117bd4f2f600c42fe022c846029edaf4a10",
+        "class_name": "Arabic",
+        "available_seats": 20,
+        "class_price": 99.99,
+        "instructor_image": "https://pantheon.io/sites/default/files/styles/540x540_top/public/fatima.jpg?itok=vZ027jiL",
+        "instructor_name": "Fatima Khalid",
+        "instructor_email": "fatimakhalid@example.com",
+        "num_classes_taken": 30,
+        "classes_taken": [
+            "Arabic Alphabet",
+            "Basic Arabic Conversation"
+        ]
+    },
+    {
+        "class_image": "https://img.freepik.com/premium-vector/portuguese-language-learning-concept-language-school-portuguese-course_277904-16355.jpg?w=740",
+        "class_name": "Portuguese",
+        "available_seats": 18,
+        "class_price": 129.99,
+        "instructor_image": "https://aging.brown.edu/sites/default/files/Screen%20Shot%202022-08-14%20at%202.23.10%20PM.png",
+        "instructor_name": "Carlos Silva",
+        "instructor_email": "carlossilva@example.com",
+        "num_classes_taken": 40,
+        "classes_taken": [
+            "Portuguese Grammar",
+            "Brazilian Portuguese"
+        ]
+    }
+]
