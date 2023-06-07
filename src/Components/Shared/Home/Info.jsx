@@ -2,12 +2,13 @@ import infoimg1 from '../../../../src/assets/icons/phone.jpg'
 import infoimg2 from '../../../../src/assets/icons/like.jpg'
 import infoimg3 from '../../../../src/assets/icons/setting.jpg'
 import infoimg4 from '../../../../src/assets/icons/message.jpg'
+import './info.css'
 
 const Info = () => {
     return (
-        <div className='grid sm:grid-cols-1 lg:grid-cols-4 py-9 my-20 bg-blue-200'>
+        <div className='grid sm:grid-cols-1 lg:grid-cols-4 py-9 my-20 bg-blue-200 '>
 
-            <div className='flex mb-5'>
+            <div className='flex mb-5 group ps-2'>
                 <div className='pe-5'>
                     <img className='w-[60px]' src={infoimg1} alt="" />
                 </div>
@@ -19,7 +20,7 @@ const Info = () => {
 
 
 
-            <div className='flex mb-5'>
+            <div className='flex mb-5 group'>
                 <div className='pe-5'>
                     <img className='w-[60px]' src={infoimg2} alt="" />
                 </div>
@@ -31,7 +32,7 @@ const Info = () => {
 
 
 
-            <div className='flex mb-5'>
+            <div className='flex mb-5 group'>
                 <div className='pe-5'>
                     <img className='w-[60px]' src={infoimg3} alt="" />
                 </div>
@@ -43,7 +44,7 @@ const Info = () => {
 
 
 
-            <div className='flex '>
+            <div className='flex pe-2 group'>
                 <div className='pe-5'>
                     <img className='w-[60px]' src={infoimg4} alt="" />
                 </div>
