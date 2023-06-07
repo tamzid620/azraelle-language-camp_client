@@ -12,10 +12,6 @@ const AuthProvider = ({ children }) => {
 
     const googleProvider = new GoogleAuthProvider();
 
-    const createUser = (email, password) => {
-        setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password)
-    }
 
     const signIn = (email, password) => {
         setLoading(true);
@@ -42,20 +38,12 @@ const AuthProvider = ({ children }) => {
         };
     }, []);
 
-    const updateUserProfile = (name, photo) => {
-        return updateProfile(auth.currentUser, {
-            displayName: name, photoURL: photo
-        });
-    }
-
     const authInfo = {
         user,
         loading,
-        createUser,
         signIn,
         googleSignIn,
         logOut,
-        updateUserProfile,
     }
 
 

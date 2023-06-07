@@ -2,7 +2,7 @@ import { useForm } from 'react-hook-form';
 import './Login.css';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider } from 'firebase/auth';
@@ -10,7 +10,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
 
-
+    const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit } = useForm();
     const { signIn , googleSignIn } = useContext(AuthContext);
 
@@ -85,12 +85,12 @@ const Login = () => {
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <div className="password-input">
-                        <input
-                            type="password"
+                    <input
+                            type={showPassword ? 'text' : 'password'}
                             id="password"
                             {...register('password', { required: true })}
                         />
-                        <i className="">show Password</i>
+                        <i className="fa fa-eye" onClick={() => setShowPassword(!showPassword)}>Show Password</i>
                     </div>
                 </div>
 {/* submit input  */}
