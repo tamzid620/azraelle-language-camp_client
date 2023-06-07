@@ -27,20 +27,20 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider);
     }
 
-    // const logOut = () => {
-    //     setLoading(true);
-    //     return signOut(auth);
-    // }
+    const logOut = () => {
+        setLoading(true);
+        return signOut(auth);
+    }
 
-    // useEffect(() => {
-    //     const unsubcribe = onAuthStateChanged(auth, (loggedUser) => {
-    //         setUser(loggedUser);
-    //         setLoading(false)
-    //     });
-    //     return () => {
-    //         unsubcribe();
-    //     };
-    // }, []);
+    useEffect(() => {
+        const unsubcribe = onAuthStateChanged(auth, (loggedUser) => {
+            setUser(loggedUser);
+            setLoading(false)
+        });
+        return () => {
+            unsubcribe();
+        };
+    }, []);
 
     const updateUserProfile = (name, photo) => {
         return updateProfile(auth.currentUser, {
@@ -54,7 +54,7 @@ const AuthProvider = ({ children }) => {
         createUser,
         signIn,
         googleSignIn,
-        // logOut,
+        logOut,
         updateUserProfile,
     }
 
