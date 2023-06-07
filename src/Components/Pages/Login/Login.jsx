@@ -4,17 +4,20 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
+import { FcGoogle } from "react-icons/fc";
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
 
 
     const { register, handleSubmit } = useForm();
-    const { signIn } = useContext(AuthContext);
+    const { signIn , googleSignIn } = useContext(AuthContext);
 
     const onSubmit = (data) => {
         const { email, password } = data;
 
+//  Email Password  Login ----------------------------------
         signIn(email, password)
             .then((result) => {
                 const user = result.user;
@@ -27,16 +30,49 @@ const Login = () => {
                 })
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
+                console.log(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Login Failed!',
+                    footer: 'Please Login Again'
+                  })
             });
     };
+
+    //  Google Login ----------------------------------
+  const googleLogin = () => {
+    googleSignIn( GoogleAuthProvider)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        Swal.fire({
+            icon: 'success',
+            title: 'Login SuccessFully with Google ',
+            showConfirmButton: false,
+            timer: 1500
+        })
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.customData.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Login Failed!',
+            footer: 'Please Login Again'
+          })
+      });
+  };
 
     return (
         <div>
             <form className="login-form mx-auto my-20" onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="font-bold text-2xl">Please Login</h2>
-
+{/* Email input  */}
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
                     <input
@@ -45,7 +81,7 @@ const Login = () => {
                         {...register('email', { required: true })}
                     />
                 </div>
-
+{/* password input  */}
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <div className="password-input">
@@ -54,21 +90,22 @@ const Login = () => {
                             id="password"
                             {...register('password', { required: true })}
                         />
-                        <i className="fa fa-eye"></i>
+                        <i className="">show Password</i>
                     </div>
                 </div>
-
+{/* submit input  */}
                 <div className="form-group bg-blue-300">
                     <input type="submit" value="Login" />
                 </div>
-
+{/* go to register page option  */}
                 <div className="form-group">
                     <p>Don't have an account?</p>
                     <Link to="/register"><a>Register</a></Link>
                 </div>
-
-                <div>
+{/* google login option  */}
                     <hr />
+                <div className='flex justify-center mt-3'>
+                    <button onClick={() => googleLogin()}><FcGoogle className='w-[50px] h-[50px]'></FcGoogle></button>
                 </div>
             </form>
         </div>
