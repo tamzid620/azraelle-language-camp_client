@@ -12,8 +12,8 @@ const PopularInstructor = () => {
         { src: "http://eyesurgeons.com.sg/assets/Dr-Heng-Li-Wei.jpg", width: 800, height: 600 },
         { src: "https://aging.brown.edu/sites/default/files/Screen%20Shot%202022-08-14%20at%202.23.10%20PM.png", width: 800, height: 600 },
         { src: "https://www.celebrityspeakers.com.au/content/uploads/2020/12/Dr-John-Smith-1-website.jpeg", width: 800, height: 600 },
-        { src: "https://faculty.mdanderson.org/content/dam/mdanderson/images/fis/alma_rodriguez.jpg.resize.405.575.high.jpg", width: 1600, height: 900 },
-        { src: "https://www.pretpro.fr/wp-content/uploads/2021/03/Giulia-BIANCHI-.jpg", width: 1600, height: 900 },
+        { src: "https://faculty.mdanderson.org/content/dam/mdanderson/images/fis/alma_rodriguez.jpg.resize.405.575.high.jpg", width: 800, height: 600 },
+        { src: "https://www.pretpro.fr/wp-content/uploads/2021/03/Giulia-BIANCHI-.jpg", width: 800, height: 600 },
     ];
 
     useEffect(() => {

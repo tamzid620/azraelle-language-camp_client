@@ -10,7 +10,7 @@
         "instructor_email": "johnsmith@example.com",
         "num_classes_taken": 50,
         "classes_taken": [
-            "Introduction to English",
+            "Introduction to English ,",
             "Advanced Grammar"
         ]
     },
@@ -25,7 +25,7 @@
         "instructor_email": "mariarodriguez@example.com",
         "num_classes_taken": 40,
         "classes_taken": [
-            "Basic Conversation",
+            "Basic Conversation ,",
             "Intermediate Writing"
         ]
     },
@@ -40,7 +40,7 @@
         "instructor_email": "jeanpierre@example.com",
         "num_classes_taken": 30,
         "classes_taken": [
-            "French Pronunciation",
+            "French Pronunciation , ",
             "Advanced Speaking"
         ]
     },
@@ -55,7 +55,7 @@
         "instructor_email": "hansmueller@example.com",
         "num_classes_taken": 35,
         "classes_taken": [
-            "German Vocabulary",
+            "German Vocabulary ,",
             "Business German"
         ]
     },
@@ -70,7 +70,7 @@
         "instructor_email": "giuliabianchi@example.com",
         "num_classes_taken": 45,
         "classes_taken": [
-            "Italian Grammar",
+            "Italian Grammar ,",
             "Conversational Italian"
         ]
     },
@@ -85,7 +85,7 @@
         "instructor_email": "liwei@example.com",
         "num_classes_taken": 50,
         "classes_taken": [
-            "Chinese Characters",
+            "Chinese Characters ,",
             "Intermediate Chinese"
         ]
     },
@@ -95,12 +95,12 @@
         "available_seats": 15,
         "total_students" : 100,
         "class_price": 109.99,
-        "instructor_image": "https://cdn-eu.anidb.net/images/main/206419.jpg",
+        "instructor_image": "https://www.themoviedb.org/t/p/w300_and_h450_bestv2/lRkWo2ZKuAiEruXlbHGgyjJjuUr.jpg",
         "instructor_name": "Yuki Tanaka",
         "instructor_email": "yukitanaka@example.com",
         "num_classes_taken": 35,
         "classes_taken": [
-            "Introduction to Japanese",
+            "Introduction to Japanese ,",
             "Hiragana and Katakana"
         ]
     },
@@ -115,7 +115,7 @@
         "instructor_email": "sergeiivanov@example.com",
         "num_classes_taken": 48,
         "classes_taken": [
-            "Russian Pronunciation",
+            "Russian Pronunciation ,",
             "Russian Literature"
         ]
     },
@@ -130,7 +130,7 @@
         "instructor_email": "fatimakhalid@example.com",
         "num_classes_taken": 30,
         "classes_taken": [
-            "Arabic Alphabet",
+            "Arabic Alphabet ,",
             "Basic Arabic Conversation"
         ]
     },
@@ -145,7 +145,7 @@
         "instructor_email": "carlossilva@example.com",
         "num_classes_taken": 40,
         "classes_taken": [
-            "Portuguese Grammar",
+            "Portuguese Grammar ,",
             "Brazilian Portuguese"
         ]
     }
