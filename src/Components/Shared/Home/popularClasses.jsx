@@ -17,7 +17,7 @@ const PopularClasses = () => {
 
     useEffect(() => {
         axiosSecure
-            .get('/courses')
+            .get('/course')
             .then((res) => setClasses(res.data))
             .catch((error) => console.error(error));
     }, [axiosSecure]);

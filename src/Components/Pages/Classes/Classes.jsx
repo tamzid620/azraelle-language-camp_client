@@ -11,7 +11,7 @@ const [classesInfos, setClassesInfos] = useState([]);
 
 useEffect(() => {
     axiosSecure
-        .get('/courses')
+        .get('/course')
         .then((res) => setClassesInfos(res.data))
         .catch((error) => console.error(error));
 }, [axiosSecure]);
@@ -27,10 +27,10 @@ return (
                 <tr>
                     <th></th>
                     <th>Photo</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Classes taken</th>
-                    <th>Classes Name</th>
+                    <th>Class Name</th>
+                    <th>Instructor Name</th>
+                    <th>Available seats</th>
+                    <th>Price</th>
                     <th>Tool</th>
                 </tr>
             </thead>
@@ -42,11 +42,10 @@ return (
 
                             <th>{index + 1}</th>
                             <td><img className="w-[40px] rounded-full" src={classesInfo?.instructor_image} alt="" /></td>
-                            <td>{classesInfo?.class_image}</td>
                             <td>{classesInfo?.class_name}</td>
                             <td>{classesInfo?.instructor_name}</td>
                             <td>{classesInfo?.available_seats}</td>
-                            <td>{classesInfo?.class_price}</td>
+                            <td>{classesInfo?.class_price} $</td>
                             <td>
                                 <button className="btn bg-blue-300 btn-xs font-bold">Select</button>
                             </td>

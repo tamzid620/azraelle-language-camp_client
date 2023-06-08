@@ -18,14 +18,14 @@ const PopularInstructor = () => {
 
     useEffect(() => {
         axiosSecure
-            .get('/courses')
+            .get('/course')
             .then((res) => setInstructors(res.data))
             .catch((error) => console.error(error));
     }, [axiosSecure]);
 
     return (
         <div className="my-20">
-            <h1 className="flex justify-center font-bold text-3xl text-blue-900 uppercase">Popular Instructor </h1>
+            <h1 className="flex justify-center font-bold text-3xl text-blue-900 uppercase">Popular Instructor</h1>
             <div className='mt-10'>
             <PhotoAlbum photos={photos} layout="rows" />
             </div>

@@ -8,7 +8,7 @@ const Instructors = () => {
 
     useEffect(() => {
         axiosSecure
-            .get('/courses')
+            .get('/course')
             .then((res) => setIntructorInfos(res.data))
             .catch((error) => console.error(error));
     }, [axiosSecure]);
