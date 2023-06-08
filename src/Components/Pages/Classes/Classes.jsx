@@ -11,7 +11,7 @@ const [classesInfos, setClassesInfos] = useState([]);
 
 useEffect(() => {
     axiosSecure
-        .get('/course')
+        .get('/classes')
         .then((res) => setClassesInfos(res.data))
         .catch((error) => console.error(error));
 }, [axiosSecure]);
@@ -20,7 +20,7 @@ useEffect(() => {
 return (
     <div>
     <h1 className="flex justify-center font-bold text-3xl text-blue-900 uppercase my-10">Classes</h1>
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto my-10">
         <table className="table">
             {/* head */}
             <thead>
