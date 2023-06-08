@@ -3,6 +3,8 @@ import 'aos/dist/aos.css'
 import Accordion from "./Accordion";
 import Banner from "./Banner";
 import Info from "./Info";
+import PopularClasses from "./popularClasses";
+import PopularInstructor from "./popularInstructor";
 
 
 const Home = () => {
@@ -22,10 +24,14 @@ const Home = () => {
             
 
             {/*Popular Classes Section ----------------------- */}
-
+            <div data-aos="fade-down">
+                <PopularClasses></PopularClasses>
+            </div>
 
             {/* Popular Instructors section ----------------------- */}
-
+            <div data-aos="fade-down">
+                <PopularInstructor></PopularInstructor>
+            </div>
 
             {/* Accordion   section ----------------------- */}
             <Accordion></Accordion>

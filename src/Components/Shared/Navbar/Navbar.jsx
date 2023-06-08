@@ -1,8 +1,8 @@
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import app from "../../../firebase/firebase.config";
 import Swal from "sweetalert2";
+import app from "../../../firebase/firebase.config";
 
 const auth = getAuth();
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
         return () => {
             unsubscribe();
         };
-    }, []);
+    }, [app]);
 
     const logOut = () => {
         signOut(auth)
@@ -41,8 +41,8 @@ const Navbar = () => {
         </>
 
     return (
-        <div>
-            <div className="navbar  bg-base-100 max-w-screen-xl">
+        <div className="">
+            <div className="navbar  bg-blue-300 opacity-80 max-w-screen-xl ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
