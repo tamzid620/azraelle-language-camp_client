@@ -44,7 +44,7 @@ const Instructors = () => {
                                     <td>{intructorInfo?.num_classes_taken}</td>
                                     <td>{intructorInfo?.classes_taken} ...etc</td>
                                     <td>
-                                        <button className="btn bg-blue-300 btn-xs font-bold">See Classes</button>
+                                        <button disabled={true} className="btn bg-blue-300 btn-xs font-bold">See Classes</button>
                                     </td>
                                 </tr>
                             )

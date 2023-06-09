@@ -3,10 +3,11 @@ import Layout from "../Components/Shared/Layout/Layout";
 import ErrorPage from "../Components/Pages/ErrorPage/ErrorPage";
 import Home from "../Components/Shared/Home/Home";
 import Instructors from "../Components/Pages/Instructors/Instructors";
-import Classes from "../Components/Pages/classes/classes";
 import DashBoard from "../Components/Pages/DashBoard/DashBoard";
 import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Register/Register";
+import PrivateRoutes from "./PrivateRoute";
+import Classes from "../Components/Pages/Classes/Classes";
   
 const router = createBrowserRouter([
     {
@@ -20,11 +21,11 @@ const router = createBrowserRouter([
         },
         {
             path: "/instructors",
-            element:<Instructors></Instructors>,
+            element:<PrivateRoutes><Instructors></Instructors></PrivateRoutes>,
         },
         {
             path: "/classes",
-            element:<Classes></Classes>,
+            element:<PrivateRoutes><Classes></Classes></PrivateRoutes>,
         },
         {
             path: "/login",

@@ -9,19 +9,18 @@ import PopularInstructor from "./popularInstructor";
 
 const Home = () => {
     Aos.init();
-
     return (
         <div>
             {/* Banner Section ----------------------- */}
             <div data-aos="fade-right">
-            <Banner ></Banner>
+                <Banner ></Banner>
             </div>
 
             {/* Info section ----------------------- */}
             <div data-aos="fade-left">
-            <Info ></Info>
+                <Info ></Info>
             </div>
-            
+
 
             {/*Popular Classes Section ----------------------- */}
             <div data-aos="fade-down">
