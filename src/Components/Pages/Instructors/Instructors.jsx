@@ -8,7 +8,7 @@ const Instructors = () => {
 
     useEffect(() => {
         axiosSecure
-            .get('/classes')
+            .get('/allinstructors')
             .then((res) => setIntructorInfos(res.data))
             .catch((error) => console.error(error));
     }, [axiosSecure]);
@@ -16,7 +16,7 @@ const Instructors = () => {
 
     return (
         <div>
-            <h1 className="flex justify-center font-bold text-3xl text-blue-900 uppercase my-10">All Instructors :{intructorInfos.length}</h1>
+            <h1 className="flex justify-center font-bold text-3xl text-blue-900 uppercase my-10">All Instructors</h1>
             <div className="overflow-x-auto my-10">
                 <table className="table">
                     {/* head */}
