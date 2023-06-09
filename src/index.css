@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body{
-    background-color: rgba(103, 103, 161, 0.438);
-} */
+
+.drawer-side a.active {
+    color: black;
+    text-decoration: none;
+  }
+  .drawer-side a {
+    background-color: transparent;
+  }

@@ -27,7 +27,8 @@ const Classes = () => {
     const handleSelect =data => {
         console.log(data);
         if(user && user.email){
-            fetch('http://localhost:5000/classselect', {
+            const email = user.email;
+            fetch(`http://localhost:5000/classselect/${email}`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

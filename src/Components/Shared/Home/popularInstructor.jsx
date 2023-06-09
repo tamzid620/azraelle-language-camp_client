@@ -24,7 +24,7 @@ const PopularInstructor = () => {
                     <div className=" p-2" key={instructorItem?.id}>
                         {/* <img className="rounded-xl" style={{width:"500px" , height:"400px"}} src={instructorItem?.instructor_image} alt=""/> 
                         */}
-                        <div className="card w-96 bg-base-100 shadow-xl">
+                        <div className="card bg-base-100 shadow-xl">
                             <figure><img style={{width:"500px" , height:"400px"}} src={instructorItem?.instructor_image} alt="Shoes" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">
