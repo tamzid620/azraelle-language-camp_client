@@ -5,7 +5,7 @@ import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer ,FcManager , FcReading, 
 const DashBoard = () => {
 
     const Admin = true;
-    // const Intructor = true;
+    const Instructor = true;
 
     return (
         <div>
@@ -36,7 +36,7 @@ const DashBoard = () => {
                                 </>
                             )
                                 :
-                                Intructor ? (
+                                Instructor ? (
                                     <>
 
                                         <li><NavLink to="/dashboard/addaclass"><FcAddDatabase /> Add A Class </NavLink></li>
