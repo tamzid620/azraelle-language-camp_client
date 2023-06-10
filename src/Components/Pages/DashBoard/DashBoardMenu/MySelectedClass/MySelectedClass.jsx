@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
-import useSelectClass from "../../../hooks/useSelectClass";
+import useSelectClass from "../../../../../hooks/useSelectClass";
 import Swal from "sweetalert2";
-import { useContext } from "react";
-import { AuthContext } from "../../../Providers/AuthProvider";
 
 
 const MySelectedClass = () => {
-    const {user} = useContext(AuthContext)
     const [selectClass , refetch] = useSelectClass();
 
     const handleDelete = selectClassItem => {
@@ -59,6 +56,7 @@ const MySelectedClass = () => {
                                 <th></th>
                                 <th>Subject</th>
                                 <th>Instructor</th>
+                                <th>Available Sits</th>
                                 <th>price</th>
                                 <th>Tool</th>
                             </tr>
@@ -72,6 +70,7 @@ const MySelectedClass = () => {
                                 <td><img className="w-[100px] rounded-lg" src={selectClassItem?.class_image} alt="" /></td>
                                 <td>{selectClassItem?.class_name}</td>
                                 <td>{selectClassItem?.instructor_name}</td>
+                                <td>{selectClassItem?.available_seats}</td>
                                 <td>{selectClassItem?.class_price}</td>
                                 <th>
                                     <button

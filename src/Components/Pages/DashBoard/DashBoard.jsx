@@ -1,8 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
 // import { FaRegHandPointRight } from 'react-icons/fa';
-import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer } from "react-icons/fc";
+import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer ,FcManager , FcReading, FcAddDatabase, } from "react-icons/fc";
 
 const DashBoard = () => {
+
+    const Admin = true;
+    const Intructor = true;
+
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -20,11 +24,43 @@ const DashBoard = () => {
 
                         <div className="divider"></div>
 
-                        <li><NavLink to="/dashboard/myselectedclass"><FcApproval /> MY Selected Classes </NavLink></li>
+                        {
+                            Admin ? (
+                                <>
 
-                        <li><NavLink to="/dashboard/myenrolledclass"><FcRefresh /> My Enrolled Classes </NavLink></li>
+                                    <li><NavLink to="/dashboard/manageclasses"><FcReading /> Manage Classes </NavLink></li>
 
-                        <li><NavLink to="/dashboard/paymenthistory"><FcMoneyTransfer /> Payment History </NavLink></li>
+                                    <li><NavLink to="/dashboard/manageusers"><FcManager /> Manage Users </NavLink></li>
+
+
+                                </>
+                            )
+                                :
+                                Intructor ? (
+                                    <>
+
+                                        <li><NavLink to="/dashboard/addaclass"><FcAddDatabase /> Add A Class </NavLink></li>
+
+                                        <li><NavLink to="/dashboard/myclasses"><FcApproval /> My Classes </NavLink></li>
+
+
+                                    </>
+                                )
+                                    : (
+                                        <>
+
+                                            <li><NavLink to="/dashboard/myselectedclass"><FcApproval /> MY Selected Classes </NavLink></li>
+
+                                            <li><NavLink to="/dashboard/myenrolledclass"><FcRefresh /> My Enrolled Classes </NavLink></li>
+
+                                            <li><NavLink to="/dashboard/paymenthistory"><FcMoneyTransfer /> Payment History </NavLink></li>
+
+
+                                        </>
+
+                                    )
+                        }
+
                     </ul>
 
                 </div>

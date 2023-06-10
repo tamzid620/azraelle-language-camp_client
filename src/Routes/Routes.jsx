@@ -8,9 +8,13 @@ import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoute";
 import Classes from "../Components/Pages/Classes/Classes";
-import MySelectedClass from "../Components/Pages/MySelectedClass/MySelectedClass";
-import MyEnrolledClass from "../Components/Pages/MyEnrolledClass/MyEnrolledClass";
-import PaymentHistory from "../Components/Pages/PaymentHistory/PaymentHistory";
+import MySelectedClass from "../Components/Pages/DashBoard/DashBoardMenu/MySelectedClass/MySelectedClass";
+import MyEnrolledClass from "../Components/Pages/DashBoard/DashBoardMenu/MyEnrolledClass/MyEnrolledClass";
+import PaymentHistory from "../Components/Pages/DashBoard/DashBoardMenu/PaymentHistory/PaymentHistory";
+import MyClasses from "../Components/Pages/DashBoard/DashBoardMenu/MyClasses/MyClasses";
+import AddAClass from "../Components/Pages/DashBoard/DashBoardMenu/AddAClass/AddAClass";
+import ManageUsers from "../Components/Pages/DashBoard/DashBoardMenu/ManageUsers/ManageUsers";
+import ManageClasses from "../Components/Pages/DashBoard/DashBoardMenu/ManageClasses/ManageClasses";
   
 const router = createBrowserRouter([
     {
@@ -44,6 +48,22 @@ const router = createBrowserRouter([
         path:"dashboard",
         element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
         children: [
+            {
+                path:'manageclasses',
+                element:<ManageClasses></ManageClasses>,
+            },
+            {
+                path:'manageusers',
+                element:<ManageUsers></ManageUsers>,
+            },
+            {
+                path:'addaclass',
+                element:<AddAClass></AddAClass>,
+            },
+            {
+                path:'myclasses',
+                element:<MyClasses></MyClasses>,
+            },
             {
                 path:'myselectedclass',
                 element:<MySelectedClass></MySelectedClass>,
