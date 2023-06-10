@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 
 
 const useSelectClass = () => {
-    const {user} = useContext(AuthContext)
+    const {user } = useContext(AuthContext)
     const [axiosSecure] = useAxiosSecure();
 
     const { refetch, data: selectClass = [] } = useQuery({

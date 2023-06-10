@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import useSelectClass from "../../../hooks/useSelectClass";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../../Providers/AuthProvider";
 
 
 const MySelectedClass = () => {
+    const {user} = useContext(AuthContext)
     const [selectClass , refetch] = useSelectClass();
 
-    const handleDelete = (selectClassItem) => {
+    const handleDelete = selectClassItem => {
         
         Swal.fire({
             title: 'Are you sure?',
@@ -15,15 +18,15 @@ const MySelectedClass = () => {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
-        }).then((result) => {
+        })
+        .then((result) => {
             
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classselect/${selectClassItem._id}`, {
+                fetch(`http://localhost:5000/classselect/${selectClassItem.email}`, {
                     method: 'DELETE'
                 })
                 .then(res => res.json())
                 .then(data => {
-                        console.log(selectClassItem._id);
                         if (data.deletedCount > 0) {
                             refetch();
                             Swal.fire(
@@ -33,7 +36,7 @@ const MySelectedClass = () => {
                             )
                         }
                     })
-            }
+                  }
         })
     }
 
