@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiousSecure";
+
+
 const PopularClasses = () => {
     const [axiosSecure] = useAxiosSecure();
     const [classes, setClasses] = useState([]);

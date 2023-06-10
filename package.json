@@ -17,6 +17,7 @@
     "boxicons": "^2.1.4",
     "firebase": "^9.22.1",
     "flat-color-icons": "^1.1.0",
+    "jsonwebtoken": "^9.0.0",
     "lightgallery": "^2.7.1",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
