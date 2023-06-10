@@ -5,7 +5,7 @@ import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer ,FcManager , FcReading, 
 const DashBoard = () => {
 
     const Admin = true;
-    const Intructor = true;
+    // const Intructor = true;
 
     return (
         <div>
