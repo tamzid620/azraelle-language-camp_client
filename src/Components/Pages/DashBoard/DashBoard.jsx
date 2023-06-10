@@ -1,11 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
-// import { FaRegHandPointRight } from 'react-icons/fa';
 import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer ,FcManager , FcReading, FcAddDatabase, } from "react-icons/fc";
+import useAdmin from "../../../hooks/useAdmin";
+import useInstructor from "../../../hooks/useInstructor";
 
 const DashBoard = () => {
 
-    const Admin = true;
-    const Instructor = true;
+    const [ Admin ] = useAdmin();
+    const [ Instructor ] = useInstructor();
 
     return (
         <div>

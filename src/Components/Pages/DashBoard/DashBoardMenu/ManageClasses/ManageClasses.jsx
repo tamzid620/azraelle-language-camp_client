@@ -3,7 +3,7 @@
 const ManageClasses = () => {
     return (
         <div>
-            <h3> Manage Classes </h3>
+            <h3  className="font-semibold text-2xl mb-5"> Manage Classes </h3>
         </div>
     );
 };

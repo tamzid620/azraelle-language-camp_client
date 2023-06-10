@@ -89,7 +89,7 @@ const ManageUsers = () => {
 
     return (
         <div className="w-full ms-10 border rounded-lg p-5">
-            <h4> Manage Users :{users.length} </h4>
+            <h4 className="font-semibold text-2xl mb-5"> Manage Users </h4>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     {/* head*/}
