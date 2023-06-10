@@ -6,13 +6,17 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, updateProf
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
+import useAxiosSecure from "../../../hooks/useAxiousSecure";
 
 const auth = getAuth();
 
 const Register = () => {
 
     const { googleSignIn } = useContext(AuthContext);
-    const { register, handleSubmit, formState: { errors }, watch, } = useForm();
+    const { register, handleSubmit, reset, formState: { errors }, watch, } = useForm();
+    const [axiosSecure] = useAxiosSecure();
+    
+
 
     // Email and Password SignUp ----------------------------------
     const onSubmit = (data) => {
@@ -25,18 +29,30 @@ const Register = () => {
                 .then((userCredential) => {
                     const user = userCredential.user;
                     console.log(user, userCredential);
+
                     updateProfile(auth.currentUser, {
                         displayName: name,
                         photoURL: photoUrl,
                     })
                         .then(() => {
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Account Registered Successfully',
-                                showConfirmButton: false,
-                                timer: 1500
-                            });
+                            const allUser = { name: data.name, email: data.email }
+                            axiosSecure
+                                .post('/users', allUser)
+                                .then(res => res.json())
+
+                                .then(data => {
+                                    if (data.insertedId) {
+                                        reset();
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Account Registered Successfully',
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                        });
+                                    }
+                                })
                         })
+
                         .catch((error) => {
                             console.log(error.message);
 
@@ -175,7 +191,7 @@ const Register = () => {
                         className="font-medium text-gray-900 hover:text-gray-700"
                     > Already Have  an account?</Link>
                 </div>
-                
+
                 {/* google login option  */}
                 <hr />
                 <div className='flex justify-center mt-3'>

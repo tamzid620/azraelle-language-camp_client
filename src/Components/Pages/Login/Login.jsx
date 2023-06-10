@@ -15,7 +15,6 @@ const Login = () => {
     const { signIn, googleSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
 
     const from = location.state?.from?.pathname || "/";
 
@@ -56,7 +55,7 @@ const Login = () => {
                 navigate(from, { replace: true });
                 Swal.fire({
                     icon: 'success',
-                    title: 'Registration SuccessFully with Google ',
+                    title: 'Login SuccessFully with Google ',
                     showConfirmButton: false,
                     timer: 1500
                 })

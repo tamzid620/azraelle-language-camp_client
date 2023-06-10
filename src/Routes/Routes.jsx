@@ -24,11 +24,11 @@ const router = createBrowserRouter([
         },
         {
             path: "/instructors",
-            element:<PrivateRoutes><Instructors></Instructors></PrivateRoutes>,
+            element:<Instructors></Instructors>,
         },
         {
             path: "/classes",
-            element:<PrivateRoutes><Classes></Classes></PrivateRoutes>,
+            element:<Classes></Classes>,
         },
         {
             path: "/login",
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
     },
     {
         path:"dashboard",
-        element:<DashBoard></DashBoard>,
+        element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
         children: [
             {
                 path:'myselectedclass',
