@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import useAxiosSecure from "../../../../../hooks/useAxiousSecure";
-import { FcFullTrash } from "react-icons/fc";
+import { FcFullTrash , FcBusinessman  ,FcCustomerSupport} from "react-icons/fc";
 import Swal from "sweetalert2";
 
 
@@ -13,9 +13,50 @@ const ManageUsers = () => {
         return res.data;
     })
 
-    
+// make admin section -----------------------
+    const handleMakeAdmin =user => {
+        fetch(`http://localhost:5000/users/admin/${user._id}`,{
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    icon: 'success',
+                    title: `${user.name} is Selected as Admin!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+
+// make instructor section -----------------------
+    const handleMakeInstructor =user => {
+        fetch(`http://localhost:5000/users/instructor/${user._id}`,{
+            method: 'PATCH'
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.modifiedCount){
+                refetch();
+                Swal.fire({
+                    icon: 'success',
+                    title: `${user.name} is Selected as Instructor!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+        })
+    }
+
+
+// delete section -----------------------
     const handleDelete = user => {
-               
+
         Swal.fire({
             title: 'Are you sure?',
             icon: 'warning',
@@ -24,25 +65,25 @@ const ManageUsers = () => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         })
-        .then((result) => {
-            
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/users/${user.email}`, {
-                    method: 'DELETE'
-                })
-                .then(res => res.json())
-                .then(data => {
-                        if (data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your selected class has been deleted.',
-                                'success'
-                            )
-                        }
+            .then((result) => {
+
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/users/${user.email}`, {
+                        method: 'DELETE'
                     })
-                  }
-        }) 
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                refetch();
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your selected class has been deleted.',
+                                    'success'
+                                )
+                            }
+                        })
+                }
+            })
     }
 
 
@@ -57,7 +98,8 @@ const ManageUsers = () => {
                             <th></th>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
+                            <th>Admin Role</th>
+                            <th>Instructor Role</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -68,11 +110,20 @@ const ManageUsers = () => {
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
-                                    
+                                    {
+                                        user.role === 'admin' ? 'admin' :
+                                            <button onClick={() => handleMakeAdmin(user)} className="btn btn-ghost bg-blue-100  text-white text-2xl"><FcCustomerSupport/></button>
+                                    }
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDelete(user)} className="btn btn-ghost bg-blue-100  text-white">
-                                        <FcFullTrash/>
+                                    {
+                                        user.role === 'instructor' ? 'instructor' :
+                                            <button onClick={() => handleMakeInstructor(user)}  className="btn btn-ghost bg-green-100  text-white text-2xl"><FcBusinessman/></button>
+                                    }
+                                </td>
+                                <td>
+                                    <button onClick={() => handleDelete(user)} className="btn btn-ghost bg-red-200  text-white text-2xl">
+                                        <FcFullTrash />
                                     </button>
                                 </td>
                             </tr>)
