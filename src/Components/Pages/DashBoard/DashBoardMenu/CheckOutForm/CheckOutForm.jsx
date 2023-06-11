@@ -6,9 +6,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import useSelectClass from "../../../../../hooks/useSelectClass";
+import { useNavigate } from "react-router-dom";
 
 
-const CheckOutForm = ({class_price }) => {
+const CheckOutForm = ({ class_price }) => {
+
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
@@ -18,18 +20,18 @@ const CheckOutForm = ({class_price }) => {
     const [transactionId, setTransactionId] = useState('');
     const { user } = useContext(AuthContext)
     const [selectClass] = useSelectClass()
+    const navigate = useNavigate()
 
 
     useEffect(() => {
         if (class_price > 0) {
-            axiosSecure.post(`/create-payment-intent/${selectClass._id}` , { class_price })
+            axiosSecure.post(`/create-payment-intent/${selectClass._id}`, { class_price })
                 .then(res => {
-                    console.log(res.data.clientSecret)
                     setClientSecret(res.data.clientSecret);
                 })
         }
-    }, [])
-    
+    }, [class_price, axiosSecure, selectClass._id])
+
 
     const handleSubmit = async (event) => {
 
@@ -80,57 +82,58 @@ const CheckOutForm = ({class_price }) => {
                 transactionId: paymentIntent.id,
                 class_price,
                 date: new Date(),
-                quantity: selectClass.length,
+                selectClassItems: selectClass[0]._id,
+                className: selectClass[0].class_name,
                 status: 'service pending',
-                className: selectClass.map(selectClass => selectClass.class_image)
             }
 
-            axiosSecure.post('/payments', payment)
+            axiosSecure.post(`/payments/${selectClass._id}`, payment)
                 .then(res => {
                     console.log(res.data);
-                    if (res.data.result.insertedId) {
+                    if (res.data.insertResult.insertedId) {
                         Swal.fire({
                             icon: 'success',
                             title: 'Payment Added Successfully',
                             showConfirmButton: false,
                             timer: 1500
-                          })
+                        })
+                        navigate('/dashboard/myenrolledclass')
                     }
                 })
-            }
-
         }
 
-        return (
-            <div >
-                <form className="w-3xl ms-10 mt-10" onSubmit={handleSubmit}>
-                    <CardElement
-                        options={{
-                            style: {
-                                base: {
-                                    fontSize: '20px',
-                                    color: '#424770',
-                                    '::placeholder': {
-                                        color: '#aab7c4',
-                                    },
-                                },
-                                invalid: {
-                                    color: '#9e2146',
+    }
+
+    return (
+        <div >
+            <form className="w-3xl ms-10 mt-10" onSubmit={handleSubmit}>
+                <CardElement
+                    options={{
+                        style: {
+                            base: {
+                                fontSize: '20px',
+                                color: '#424770',
+                                '::placeholder': {
+                                    color: '#aab7c4',
                                 },
                             },
-                        }}
-                    />
-        <button className="btn bg-green-300 btn-sm mt-6" type="submit" disabled={!stripe || !clientSecret || processing}>
-                        Pay
-                    </button>
-                </form>
+                            invalid: {
+                                color: '#9e2146',
+                            },
+                        },
+                    }}
+                />
+                <button className="btn bg-green-300 btn-sm mt-6" type="submit" disabled={!stripe || !clientSecret || processing}>
+                    Pay
+                </button>
+            </form>
 
-                <div className="mt-10">
-                    {cardError && <p className="text-red-600 font-semibold ms-10 text-2xl">ERROR: {cardError}</p>}
-                    {transactionId && <p className="text-green-500 font-semibold ms-10 text-2xl">SUCCESS: Transaction complete with transactionId: {transactionId}</p>}
-                </div>
+            <div className="mt-10">
+                {cardError && <p className="text-red-600 font-semibold ms-10 text-2xl">ERROR: {cardError}</p>}
+                {transactionId && <p className="text-green-500 font-semibold ms-10 text-2xl">SUCCESS: Transaction complete with transactionId : {transactionId}</p>}
             </div>
-        );
+        </div>
+    );
 };
 
-    export default CheckOutForm;
+export default CheckOutForm;
