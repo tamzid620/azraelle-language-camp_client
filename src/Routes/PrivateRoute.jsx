@@ -8,7 +8,7 @@ const PrivateRoutes = ({ children }) => {
     const location = useLocation();
 
     if(loading){
-        return <progress className="progress w-56"></progress>
+        return  <span className="flex justify-content items-center loading loading-dots loading-lg"></span>
     }
 
     if (user) {

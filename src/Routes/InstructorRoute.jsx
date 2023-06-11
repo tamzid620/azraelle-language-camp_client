@@ -10,7 +10,7 @@ const InstructorRoute = ({ children }) => {
     const location = useLocation();
 
     if(loading || InstructorLoading){
-        return <progress className="progress w-56"></progress>
+        <span className="flex justify-content items-center loading loading-dots loading-lg"></span>
     }
 
     if (user && Instructor) {

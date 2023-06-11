@@ -10,7 +10,7 @@ const AdminRoute = ({ children }) => {
     const location = useLocation();
 
     if(loading || AdminLoading){
-        return <progress className="progress w-56"></progress>
+        <span className="flex justify-content items-center loading loading-dots loading-lg"></span>
     }
 
     if (user && Admin) {
