@@ -4,10 +4,10 @@ import Swal from "sweetalert2";
 
 
 const MySelectedClass = () => {
-    const [selectClass , refetch] = useSelectClass();
+    const [selectClass, refetch] = useSelectClass();
 
     const handleDelete = selectClassItem => {
-        
+
         Swal.fire({
             title: 'Are you sure?',
             icon: 'warning',
@@ -16,35 +16,32 @@ const MySelectedClass = () => {
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, delete it!'
         })
-        .then((result) => {
-            
-            if (result.isConfirmed) {
-                fetch(`http://localhost:5000/classselect/${selectClassItem.email}`, {
-                    method: 'DELETE'
-                })
-                .then(res => res.json())
-                .then(data => {
-                        if (data.deletedCount > 0) {
-                            refetch();
-                            Swal.fire(
-                                'Deleted!',
-                                'Your selected class has been deleted.',
-                                'success'
-                            )
-                        }
+            .then((result) => {
+
+                if (result.isConfirmed) {
+                    fetch(`http://localhost:5000/classselect/${selectClassItem.email}`, {
+                        method: 'DELETE'
                     })
-                  }
-        })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                refetch();
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your selected class has been deleted.',
+                                    'success'
+                                )
+                            }
+                        })
+                }
+            })
     }
 
 
     return (
         <div className="w-full ms-10 border rounded-lg p-5">
             <div className="flex justify-between mb-5">
-            <h2 className="font-semibold text-2xl">My Selected Class</h2>
-            <Link to="/dashboard/payment">
-                <button className="btn bg-green-300 btn-sm">PAY</button>
-            </Link>
+                <h2 className="font-semibold text-2xl">My Selected Class</h2>
             </div>
             <div>
                 <div className="overflow-x-auto">
@@ -59,29 +56,35 @@ const MySelectedClass = () => {
                                 <th>Available Sits</th>
                                 <th>price</th>
                                 <th>Tool</th>
+                                <th>Tool</th>
                             </tr>
                         </thead>
                         <tbody>
-                        {
-                            selectClass.map((selectClassItem ,index) => (
-                            <tr key={selectClassItem._id}>
+                            {
+                                selectClass.map((selectClassItem, index) => (
+                                    <tr key={selectClassItem._id}>
 
-                                <th>{index + 1}</th>
-                                <td><img className="w-[100px] rounded-lg" src={selectClassItem?.class_image} alt="" /></td>
-                                <td>{selectClassItem?.class_name}</td>
-                                <td>{selectClassItem?.instructor_name}</td>
-                                <td>{selectClassItem?.available_seats}</td>
-                                <td>{selectClassItem?.class_price}</td>
-                                <th>
-                                    <button
-                                    onClick={() => handleDelete(selectClassItem)}
-                                     className="btn bg-blue-300 "
-                                     >DELETE</button>
-                                </th>
+                                        <th>{index + 1}</th>
+                                        <td><img className="w-[100px] rounded-lg" src={selectClassItem?.class_image} alt="" /></td>
+                                        <td>{selectClassItem?.class_name}</td>
+                                        <td>{selectClassItem?.instructor_name}</td>
+                                        <td>{selectClassItem?.available_seats}</td>
+                                        <td>{selectClassItem?.class_price}</td>
+                                        <th>
+                                            <Link to="/dashboard/payment">
+                                                <button className="btn bg-green-300 ">PAY</button>
+                                            </Link>
+                                        </th>
+                                        <th>
+                                            <button
+                                                onClick={() => handleDelete(selectClassItem)}
+                                                className="btn bg-blue-300 "
+                                            >DELETE</button>
+                                        </th>
 
-                            </tr>
-                            ))
-                        }
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </table>
                 </div>

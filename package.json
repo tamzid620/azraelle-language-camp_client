@@ -12,6 +12,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@stripe/react-stripe-js": "^2.1.0",
+    "@stripe/stripe-js": "^1.54.0",
     "aos": "^2.3.4",
     "axios": "^1.4.0",
     "boxicons": "^2.1.4",

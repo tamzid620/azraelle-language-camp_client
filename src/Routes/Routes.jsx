@@ -15,6 +15,9 @@ import MyClasses from "../Components/Pages/DashBoard/DashBoardMenu/MyClasses/MyC
 import AddAClass from "../Components/Pages/DashBoard/DashBoardMenu/AddAClass/AddAClass";
 import ManageUsers from "../Components/Pages/DashBoard/DashBoardMenu/ManageUsers/ManageUsers";
 import ManageClasses from "../Components/Pages/DashBoard/DashBoardMenu/ManageClasses/ManageClasses";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
+import Payment from "../Components/Pages/DashBoard/DashBoardMenu/Payment/Payment";
   
 const router = createBrowserRouter([
     {
@@ -48,22 +51,28 @@ const router = createBrowserRouter([
         path:"dashboard",
         element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
         children: [
+
+            // ADMIN ROUTES------------------------->
             {
                 path:'manageclasses',
-                element:<ManageClasses></ManageClasses>,
+                element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>,
             },
             {
                 path:'manageusers',
-                element:<ManageUsers></ManageUsers>,
+                element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>,
             },
+
+             // INSTRUCTOR ROUTES------------------------->
             {
                 path:'addaclass',
-                element:<AddAClass></AddAClass>,
+                element:<InstructorRoute><AddAClass></AddAClass></InstructorRoute>,
             },
             {
                 path:'myclasses',
-                element:<MyClasses></MyClasses>,
+                element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>,
             },
+
+            // STUDENT ROUTES------------------------->
             {
                 path:'myselectedclass',
                 element:<MySelectedClass></MySelectedClass>,
@@ -75,6 +84,10 @@ const router = createBrowserRouter([
             {
                 path:'paymenthistory',
                 element:<PaymentHistory></PaymentHistory>,
+            },
+            {
+                path:'payment',
+                element:<Payment></Payment>,
             },
         ]
     }
