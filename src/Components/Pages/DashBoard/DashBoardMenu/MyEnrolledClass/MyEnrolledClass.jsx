@@ -26,9 +26,9 @@ const MyEnrolledClass = () => {
                             <tr>
                                 <th></th>
                                 <th>Email</th>
+                                <th>Transaction Id</th>
                                 <th>Class Name</th>
                                 <th>Total Price</th>
-                                <th>PAYENT DATE</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -38,9 +38,9 @@ const MyEnrolledClass = () => {
                                     <tr key={enrolleditem._id}>
                                         <th>{index + 1}</th>
                                         <td>{enrolleditem.email}</td>
+                                        <td>{enrolleditem.transactionId}</td>
                                         <td>{enrolleditem.className}</td>
                                         <td>{enrolleditem.class_price} $</td>
-                                        <td>{enrolleditem.date}</td>
                                     </tr>
                                 ))
                             }
