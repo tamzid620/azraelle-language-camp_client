@@ -7,6 +7,7 @@ import { AuthContext } from "../../../../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import useSelectClass from "../../../../../hooks/useSelectClass";
 import { useNavigate } from "react-router-dom";
+import './CheckOutForm.css'
 
 
 const CheckOutForm = ({ class_price }) => {

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../../../../Providers/AuthProvider";
 import useAxiosSecure from "../../../../../hooks/useAxiousSecure";
@@ -8,13 +8,16 @@ const img_token = import.meta.env.VITE_IMGBB_TOKEN;
 
 const AddAClass = () => {
 
+
     const { user } = useContext(AuthContext)
     const [axiosSecure] = useAxiosSecure();
     const { register, handleSubmit, reset } = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_token}`
+    const [status, setStatus] = useState("");
 
     const onSubmit = (data) => {
         const file = data.class_image[0]
+        setStatus("pending");
 
         const formData = new FormData();
         formData.append("image", file);
@@ -32,19 +35,20 @@ const AddAClass = () => {
                     const { class_name, available_seats, class_price } = data;
                     const newclass = { class_name, class_price: parseFloat(class_price), available_seats, class_image: imgURL };
                     console.log(newclass);
-                    axiosSecure.post('/addaclass' , newclass)
-                    .then(data => {
-                        console.log('class added successfully', data.data)
-                                if (data.data.insertedId) {
-                                    reset();
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Class added successfully',
-                                        showConfirmButton: false,
-                                        timer: 1500
-                                    })
-                                }
-                    })
+                    axiosSecure.post('/addaclass', newclass)
+                        .then(data => {
+                            console.log('class added successfully', data.data)
+                            if (data.data.insertedId) {
+                                reset();
+                                setStatus("success");
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Class added successfully',
+                                    showConfirmButton: false,
+                                    timer: 1500
+                                })
+                            }
+                        })
                 }
             }
             );
@@ -107,6 +111,12 @@ const AddAClass = () => {
                     <label htmlFor="price">Price</label>
                     <input className="input input-bordered input-info w-full max-w-xs"
                         id="price" type="number" step="0.01" {...register('class_price')} />
+                </div>
+
+                <div className="mb-3">
+                    <label htmlFor="status">Status</label>
+                    {status === "pending" && <p>Pending...</p>}
+                    {status === "success" && <p>Success!</p>}
                 </div>
 
                 <button className="btn bg-blue-300" type="submit">Add</button>
