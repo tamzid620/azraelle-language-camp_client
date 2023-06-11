@@ -1,12 +1,13 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer ,FcManager , FcReading, FcAddDatabase, } from "react-icons/fc";
+import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer, FcManager, FcReading, FcAddDatabase, } from "react-icons/fc";
 import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
+import { Fade } from "react-awesome-reveal";
 
 const DashBoard = () => {
 
-    const [ Admin ] = useAdmin();
-    const [ Instructor ] = useInstructor();
+    const [Admin] = useAdmin();
+    const [Instructor] = useInstructor();
 
     return (
         <div>
@@ -21,10 +22,12 @@ const DashBoard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full  text-lg font-semibold bg-blue-100">
 
+                    <Fade direction="down">
                         <li><NavLink to="/"><FcHome /> Home </NavLink></li>
+                    </Fade>
 
                         <div className="divider"></div>
-
+                        <Fade direction="left">
                         {
                             Admin ? (
                                 <>
@@ -61,6 +64,7 @@ const DashBoard = () => {
 
                                     )
                         }
+                    </Fade>
 
                     </ul>
 
