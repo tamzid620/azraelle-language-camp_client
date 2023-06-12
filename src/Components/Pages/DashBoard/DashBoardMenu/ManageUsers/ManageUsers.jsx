@@ -17,7 +17,7 @@ const ManageUsers = () => {
 
 // make admin section -----------------------
     const handleMakeAdmin =user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`,{
+        fetch(`https://azraelle-language-camp-server.vercel.app/users/admin/${user._id}`,{
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -37,7 +37,7 @@ const ManageUsers = () => {
 
 // make instructor section -----------------------
     const handleMakeInstructor =user => {
-        fetch(`http://localhost:5000/users/instructor/${user._id}`,{
+        fetch(`https://azraelle-language-camp-server.vercel.app/users/instructor/${user._id}`,{
             method: 'PATCH'
         })
         .then(res => res.json())
@@ -70,7 +70,7 @@ const ManageUsers = () => {
             .then((result) => {
 
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/users/${user.email}`, {
+                    fetch(`https://azraelle-language-camp-server.vercel.app/users/${user.email}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

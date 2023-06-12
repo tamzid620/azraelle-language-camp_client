@@ -25,7 +25,7 @@ const MyClasses = () => {
         e.preventDefault();
         console.log({class_name, available_seats, class_price});
       
-        fetch(`http://localhost:5000/updateclass/${data._id}`, {
+        fetch(`https://azraelle-language-camp-server.vercel.app/updateclass/${data._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

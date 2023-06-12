@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const axiosSecure =
   axios.create(
-    { baseURL: 'http://localhost:5000', }
+    { baseURL: 'https://azraelle-language-camp-server.vercel.app', }
   );
 
 const useAxiosSecure = () => {

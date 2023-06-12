@@ -21,7 +21,7 @@ const MySelectedClass = () => {
             .then((result) => {
 
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/classselect/${selectClassItem.email}`, {
+                    fetch(`https://azraelle-language-camp-server.vercel.app/classselect/${selectClassItem.email}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

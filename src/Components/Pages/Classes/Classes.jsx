@@ -30,7 +30,7 @@ const Classes = () => {
         console.log(data);
         if(user && user.email){
             const email = user.email;
-            fetch(`http://localhost:5000/classselect/${email}`, {
+            fetch(`https://azraelle-language-camp-server.vercel.app/classselect/${email}`, {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
