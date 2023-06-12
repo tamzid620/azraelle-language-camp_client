@@ -6,7 +6,8 @@ const Accordion = () => {
     Aos.init();
 
     return (
-        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10 accordion-container'>
+        <div className=" accordion-container">
+        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10 '>
 
             <div data-aos="fade-left" className=" flex items-center justify-center image-container" >
                 <img className='rounded-xl' src={accordionimg} alt="" />
@@ -49,7 +50,7 @@ const Accordion = () => {
             </div>
 
         </div>
-
+        </div>
     );
 };
 
