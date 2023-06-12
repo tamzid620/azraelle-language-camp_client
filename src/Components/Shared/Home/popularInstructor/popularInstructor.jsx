@@ -23,7 +23,7 @@ const PopularInstructor = () => {
             <div className="bg-blue-100 p-5 rounded-e-xl mt-10 grid sm:grid-cols-1  lg:grid-cols-3">
                 {
                 instructors.map((instructorItem) => (
-                    <div className=" p-2" key={instructorItem?.id}>
+                    <div className=" p-2" key={instructorItem?._id}>
                         {/* <img className="rounded-xl" style={{width:"500px" , height:"400px"}} src={instructorItem?.instructor_image} alt=""/> 
                         */}
                         <div className="card bg-base-100 shadow-xl">

@@ -21,59 +21,6 @@ const Register = () => {
 
 
     // Email and Password SignUp ----------------------------------
-    // const onSubmit = (data) => {
-    //     const { email, password, name, photoUrl } = data;
-    //     console.log(data);
-
-    //     if (email && password) {
-    //         console.log(email, password);
-    //         createUserWithEmailAndPassword(auth, email, password)
-    //             .then((userCredential) => {
-    //                 const user = userCredential.user;
-    //                 console.log(user, userCredential);
-
-    //                 updateProfile(auth.currentUser, {
-    //                     displayName: name,
-    //                     photoURL: photoUrl,
-    //                 })
-    //                     .then(() => {
-    //                         const allUser = { name: data.name, email: data.email }
-    //                         axiosSecure
-    //                             .post('/users', allUser)
-    //                             .then(res => res.json())
-
-    //                             .then(data => {
-    //                                 if (data.insertedId) {
-    //                                     reset();
-    //                                     Swal.fire({
-    //                                         icon: 'success',
-    //                                         title: 'Account Registered Successfully',
-    //                                         showConfirmButton: false,
-    //                                         timer: 1500
-    //                                     });
-    //                                 }
-    //                             })
-    //                     })
-
-    //                     .catch((error) => {
-    //                         console.log(error.message);
-
-    //                     });
-    //             })
-    //             .catch((error) => {
-    //                 const errorCode = error.code;
-    //                 const errorMessage = error.message;
-    //                 Swal.fire({
-    //                     icon: 'error',
-    //                     title: 'Oops...',
-    //                     text: 'SignUp Failed!',
-    //                     footer: 'Please SignUp Again'
-    //                 });
-    //             });
-    //     } else {
-    //         return;
-    //     }
-    // };
     const onSubmit = (data) => {
         const { email, password, name, photoUrl } = data;
         console.log(data);

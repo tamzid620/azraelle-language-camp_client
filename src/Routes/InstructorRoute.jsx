@@ -13,7 +13,7 @@ const InstructorRoute = ({ children }) => {
         <span className="flex justify-content items-center loading loading-dots loading-lg"></span>
     }
 
-    if (user && Instructor) {
+    if (user || Instructor) {
         return children;
     }
     return <Navigate to="/" state={{from: location}} replace></Navigate>

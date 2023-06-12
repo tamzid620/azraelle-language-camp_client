@@ -13,7 +13,7 @@ const AdminRoute = ({ children }) => {
         <span className="flex justify-content items-center loading loading-dots loading-lg"></span>
     }
 
-    if (user && Admin) {
+    if (user || Admin) {
         return children;
     }
     return <Navigate to="/" state={{from: location}} replace></Navigate>

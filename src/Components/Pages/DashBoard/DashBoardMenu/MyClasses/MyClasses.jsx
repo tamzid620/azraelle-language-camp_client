@@ -21,9 +21,9 @@ const MyClasses = () => {
             .catch((error) => console.error(error));
     }, [axiosSecure])
    
-    const handleSubmit = (e,data) =>{
-        e.preventDefault();
+    const handleSubmit = (data ,myclass) =>{
         console.log({class_name, available_seats, class_price});
+        console.log(data);
       
         fetch(`https://azraelle-language-camp-server.vercel.app/updateclass/${data._id}`, {
             method: "PUT",
@@ -32,18 +32,18 @@ const MyClasses = () => {
             },
             body: JSON.stringify(data)
         })
-        console.log(data)
 
             .then(res => res.json())
             .then(result => {
-                if (result.matchedCount > 0) {
-                    const updatedClasses = myclasses.map(myclass => {
+                if (result.modifiedCount > 0) {
+                    const updateclass = myclasses.map(myclass => {
+                      
                         if (myclass._id === myclass._id) {
                           return myclass;
                         }
                         return myclass;
                       });
-                      setMyclasses(updatedClasses);
+                      setMyclasses(updateclass);
                     Swal.fire({
                         icon: 'success',
                         title: 'Class Updated Successfully',
@@ -52,6 +52,7 @@ const MyClasses = () => {
                     })
                 }
                 console.log(result);
+                console.log(myclass)
             })
             .catch(error => {
                 console.error(error);
@@ -62,6 +63,7 @@ const MyClasses = () => {
                     text: 'Updated Operation UnSuccessful!',
                 })
             });
+            
     }
 
     return (
@@ -114,7 +116,7 @@ const MyClasses = () => {
     <div>
         {/* form data 0-------------------> */}
         <div>
-        <form onSubmit={handleSubmit}>
+        <form>
                               <div>
                                 <label htmlFor="class-name">Class Name:</label>
                                 <input
@@ -153,7 +155,8 @@ const MyClasses = () => {
                                   required
                                 />
                               </div>
-                              <button type="submit">Submit</button>
+                              <button onClick={(e) => { e.preventDefault(); handleSubmit(myclass); }} className="btn-xs bg-green-300 text-black" type="submit">Submit</button>
+
                             </form>
         </div>
     </div>

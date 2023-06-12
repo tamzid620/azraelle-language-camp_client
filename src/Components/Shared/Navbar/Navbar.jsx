@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import app from "../../../firebase/firebase.config";
 import './Navbar.css'
+import navimg from '../../../../src/assets/logo.jpg'
 
 const auth = getAuth();
 const Navbar = () => {
@@ -67,7 +68,8 @@ const Navbar = () => {
                             {header}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-xl text-blue-700">Azraelle</a>
+                        <img style={{width:"50px"}} src={navimg} alt="" />
+                    <p className="normal-case text-xl font-semibold ms-2">Azraelle</p>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -76,25 +78,29 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end flex gap-2">
-                    <>
+                    <div className="grid sm:grid-cols-1 lg:grid-cols-2">
+                    <div>
                         <button onClick={() => setDarkTheme(!darkTheme)} className="me-3 btn btn-xs">
                             {darkTheme ? "Light Mode" : "Dark Mode"}
                         </button>
-                    </>
+                    </div>
+                    <div className="flex">
                     {user ? (
                         <>
                             <div className="w-10 rounded-full">
                                 <img className="w-10 rounded-full" src={user.photoURL} alt="User" />
                             </div>
-                            <button onClick={logOut} className="btn bg-blue-600 text-white">
+                            <button onClick={logOut} className="btn btn-xs bg-blue-600 text-white">
                                 Log out
                             </button>
                         </>
                     ) : (
                         <Link to="/login">
-                            <button className="btn bg-blue-600 text-white">Log In</button>
+                            <button className="btn bg-blue-600 btn-xs text-white">Log In</button>
                         </Link>
                     )}
+                    </div>
+                    </div>
                 </div>
 
             </div>

@@ -20,7 +20,7 @@ const PopularClasses = () => {
             <div className="bg-blue-100 p-5 rounded-e-xl mt-10 grid sm:grid-cols-1  lg:grid-cols-3">
                 {
                     classes.map((classItem) => (
-                        <div className=" p-2" key={classItem?.id}>
+                        <div className=" p-2" key={classItem?._id}>
                             <div className="image-container">
                             <img className="rounded-xl" style={{ width: "550px", height: "300px" }} src={classItem?.class_image} alt="" />
                             </div>
