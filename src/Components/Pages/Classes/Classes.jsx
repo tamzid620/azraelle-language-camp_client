@@ -5,9 +5,11 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useTitle from "../../../hooks/useTitle";
 
 
 const Classes = () => {
+    useTitle('Classes')
 
     const [axiosSecure] = useAxiosSecure();
     const [classesInfos, setClassesInfos] = useState([]);

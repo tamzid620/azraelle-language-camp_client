@@ -6,9 +6,11 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../../Providers/AuthProvider';
 import { FcGoogle } from "react-icons/fc";
 import { GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../../hooks/useTitle';
 
 
 const Login = () => {
+    useTitle('Login')
 
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit } = useForm();

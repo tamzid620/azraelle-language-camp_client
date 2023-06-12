@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../../../hooks/useAxiousSecure";
 import Swal from "sweetalert2";
+import useTitle from "../../../../../hooks/useTitle";
 
 
 const ManageClasses = () => {
+  useTitle('ManageClasses')
 
     const [axiosSecure] = useAxiosSecure();
     const [manageClasses, setManageClasses] = useState([])

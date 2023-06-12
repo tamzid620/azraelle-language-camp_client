@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import useSelectClass from "../../../../../hooks/useSelectClass";
 import Swal from "sweetalert2";
+import useTitle from "../../../../../hooks/useTitle";
 
 
 const MySelectedClass = () => {
+    useTitle('MySelectedClass')
     const [selectClass, refetch] = useSelectClass();
 
     const handleDelete = selectClassItem => {

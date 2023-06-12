@@ -31,11 +31,11 @@ const router = createBrowserRouter([
         },
         {
             path: "/instructors",
-            element:<Instructors></Instructors>,
+            element:<PrivateRoutes><Instructors></Instructors></PrivateRoutes>,
         },
         {
             path: "/classes",
-            element:<Classes></Classes>,
+            element:<PrivateRoutes><Classes></Classes></PrivateRoutes>,
         },
         {
             path: "/login",
@@ -75,19 +75,19 @@ const router = createBrowserRouter([
             // STUDENT ROUTES------------------------->
             {
                 path:'myselectedclass',
-                element:<MySelectedClass></MySelectedClass>,
+                element:<PrivateRoutes><MySelectedClass></MySelectedClass></PrivateRoutes>,
             },
             {
                 path:'myenrolledclass',
-                element:<MyEnrolledClass></MyEnrolledClass>,
+                element:<PrivateRoutes><MyEnrolledClass></MyEnrolledClass></PrivateRoutes>,
             },
             {
                 path:'paymenthistory',
-                element:<PaymentHistory></PaymentHistory>,
+                element:<PrivateRoutes><PaymentHistory></PaymentHistory></PrivateRoutes>,
             },
             {
                 path:'payment',
-                element:<Payment></Payment>,
+                element:<PrivateRoutes><Payment></Payment></PrivateRoutes>,
             },
         ]
     }

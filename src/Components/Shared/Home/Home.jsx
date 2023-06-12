@@ -5,9 +5,11 @@ import Banner from "./Banner";
 import Info from "./Info";
 import PopularClasses from "./popularClasses/popularClasses";
 import PopularInstructor from "./popularInstructor/popularInstructor";
+import useTitle from "../../../hooks/useTitle";
 
 
 const Home = () => {
+    useTitle('Home')
     Aos.init();
     return (
         <div>

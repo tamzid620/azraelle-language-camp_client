@@ -2,9 +2,11 @@ import { Elements } from "@stripe/react-stripe-js";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
 import { loadStripe } from "@stripe/stripe-js";
 import useSelectClass from "../../../../../hooks/useSelectClass";
+import useTitle from "../../../../../hooks/useTitle";
 
 
 const Payment = () => {
+    useTitle('Payment')
 
     const [selectClass] = useSelectClass()
     const total = selectClass.reduce((sum, selectClass) => sum + selectClass.class_price, 0);

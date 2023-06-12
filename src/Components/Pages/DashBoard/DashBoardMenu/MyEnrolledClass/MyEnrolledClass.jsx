@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../../../hooks/useAxiousSecure";
+import useTitle from "../../../../../hooks/useTitle";
 
 
 const MyEnrolledClass = () => {
+    useTitle('MyEnrolledClass')
 
     const [axiosSecure] = useAxiosSecure();
     const [enrolled, setEnrolled] = useState([]);

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../../../hooks/useAxiousSecure";
+import useTitle from "../../../../../hooks/useTitle";
 
 
 const PaymentHistory = () => {
+    useTitle('PaymentHitory')
 
 
     const [axiosSecure] = useAxiosSecure();

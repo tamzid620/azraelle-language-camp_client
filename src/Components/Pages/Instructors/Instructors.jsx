@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiousSecure";
+import useTitle from "../../../hooks/useTitle";
 
 
 const Instructors = () => {
+    useTitle('Instructor')
     const [axiosSecure] = useAxiosSecure();
     const [intructorInfos, setIntructorInfos] = useState([]);
 

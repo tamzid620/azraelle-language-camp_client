@@ -7,10 +7,12 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
 import useAxiosSecure from "../../../hooks/useAxiousSecure";
+import useTitle from "../../../hooks/useTitle";
 
 const auth = getAuth();
 
 const Register = () => {
+    useTitle('Register')
 
     const { googleSignIn } = useContext(AuthContext);
     const { register, handleSubmit, reset, formState: { errors }, watch, } = useForm();

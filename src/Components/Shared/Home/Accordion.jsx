@@ -1,17 +1,18 @@
 import accordionimg from '../../../../src/assets/icons/accordion .jpg';
 import Aos from "aos";
+import './Accordion.css'
 
 const Accordion = () => {
     Aos.init();
 
     return (
-        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10'>
+        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10 accordion-container'>
 
-            <div data-aos="fade-left" className="flex items-center justify-center" >
-                <img className='max-w-full rounded-xl' src={accordionimg} alt="" />
+            <div data-aos="fade-left" className=" flex items-center justify-center image-container" >
+                <img className='rounded-xl' src={accordionimg} alt="" />
             </div>
 
-            <div data-aos="fade-right" className="flex items-center justify-center rounded-xl" >
+            <div  data-aos="fade-right" className="flex items-center justify-center rounded-xl accordion-content" >
                 <div className="join join-vertical w-full">
                     <div className="collapse collapse-arrow join-item border border-base-300">
                         <input type="radio" name="my-accordion-4" checked="checked" />

@@ -2,9 +2,11 @@ import { useQuery } from "react-query";
 import useAxiosSecure from "../../../../../hooks/useAxiousSecure";
 import { FcFullTrash , FcBusinessman  ,FcCustomerSupport} from "react-icons/fc";
 import Swal from "sweetalert2";
+import useTitle from "../../../../../hooks/useTitle";
 
 
 const ManageUsers = () => {
+    useTitle('ManagerUsers')
 
     const [axiosSecure] = useAxiosSecure();
 

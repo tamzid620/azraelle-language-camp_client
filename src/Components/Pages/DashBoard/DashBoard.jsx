@@ -3,8 +3,10 @@ import { FcHome, FcApproval, FcRefresh, FcMoneyTransfer, FcManager, FcReading, F
 import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
 import { Fade } from "react-awesome-reveal";
+import useTitle from "../../../hooks/useTitle";
 
 const DashBoard = () => {
+    useTitle('DashBoard')
 
     const [Admin] = useAdmin();
     const [Instructor] = useInstructor();
