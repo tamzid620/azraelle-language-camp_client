@@ -1,7 +1,7 @@
 ➊ Website name  :  Azraelle-Language-Camp
 
 ➋website features:
-        ‣ IN homepaghe you can see our classes gallery and popular instructor also some informaiton about our camp
+        ‣ IN homepaghe you can see our classes gallery and popular instructor also some informaiton about our camp and it also have responsive design 
 
         ‣ In classes section in navbar you can see out classes infomation like class name , class price , instructor name , email  . also you can select class .this will book specific class 
         
@@ -31,6 +31,6 @@
         ‣ cors
         ‣ mongodb atlas
         ‣ enviroment variable
-        
+
 ➍ive site link : 
 

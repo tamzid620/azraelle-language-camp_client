@@ -3,11 +3,26 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import app from "../../../firebase/firebase.config";
+import './Navbar.css'
 
 const auth = getAuth();
 const Navbar = () => {
 
     const [user, setUser] = useState({});
+    const [darkTheme, setDarkTheme] = useState(false);
+    const lightThemeClass = "light-theme";
+    const darkThemeClass = "dark-theme";
+
+    useEffect(() => {
+        const body = document.body;
+        if (darkTheme) {
+            body.classList.add(darkThemeClass);
+            body.classList.remove(lightThemeClass);
+        } else {
+            body.classList.add(lightThemeClass);
+            body.classList.remove(darkThemeClass);
+        }
+    }, [darkTheme]);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -26,7 +41,7 @@ const Navbar = () => {
                     title: 'signOut SuccessFully',
                     showConfirmButton: false,
                     timer: 1500
-                  })
+                })
             })
             .catch((error) => {
             });
@@ -61,6 +76,11 @@ const Navbar = () => {
                 </div>
 
                 <div className="navbar-end flex gap-2">
+                    <>
+                        <button onClick={() => setDarkTheme(!darkTheme)} className="me-3 btn btn-xs">
+                            {darkTheme ? "Light Mode" : "Dark Mode"}
+                        </button>
+                    </>
                     {user ? (
                         <>
                             <div className="w-10 rounded-full">

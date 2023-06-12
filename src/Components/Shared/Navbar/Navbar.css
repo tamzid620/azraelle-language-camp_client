@@ -1,0 +1,46 @@
+/* Dark Theme Styles */
+.dark-theme {
+    background-color: #2b2b2b;
+    color: #ffffff;
+  }
+  
+  .dark-theme .navbar-start .btn-ghost {
+    color: #ffffff;
+  }
+  
+  .dark-theme .navbar-center .menu li a {
+    color: #ffffff;
+  }
+  
+  .dark-theme .navbar-end .btn {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .dark-theme .navbar-end .btn:hover {
+    background-color: #eeeeee;
+  }
+  
+  /* Light Theme Styles */
+  .light-theme {
+    background-color: #f4f4f4;
+    color: #000000;
+  }
+  
+  .light-theme .navbar-start .btn-ghost {
+    color: #000000;
+  }
+  
+  .light-theme .navbar-center .menu li a {
+    color: #000000;
+  }
+  
+  .light-theme .navbar-end .btn {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .light-theme .navbar-end .btn:hover {
+    background-color: #333333;
+  }
+  

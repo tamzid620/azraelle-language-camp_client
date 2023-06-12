@@ -11,6 +11,8 @@ import useTitle from "../../../hooks/useTitle";
 const Home = () => {
     useTitle('Home')
     Aos.init();
+
+    
     return (
         <div>
             {/* Banner Section ----------------------- */}
