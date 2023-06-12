@@ -3,8 +3,8 @@ import 'aos/dist/aos.css'
 import Accordion from "./Accordion";
 import Banner from "./Banner";
 import Info from "./Info";
-import PopularClasses from "./popularClasses";
-import PopularInstructor from "./popularInstructor";
+import PopularClasses from "./popularClasses/popularClasses";
+import PopularInstructor from "./popularInstructor/popularInstructor";
 
 
 const Home = () => {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import useAxiosSecure from "../../../hooks/useAxiousSecure";
+import useAxiosSecure from "../../../../hooks/useAxiousSecure";
+import './popularClasses.css'
 
 
 const PopularClasses = () => {
@@ -20,7 +21,9 @@ const PopularClasses = () => {
                 {
                     classes.map((classItem) => (
                         <div className=" p-2" key={classItem?.id}>
+                            <div className="image-container">
                             <img className="rounded-xl" style={{ width: "550px", height: "300px" }} src={classItem?.class_image} alt="" />
+                            </div>
                         </div>
                     ))
                 }

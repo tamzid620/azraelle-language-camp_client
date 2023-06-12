@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../../../hooks/useAxiousSecure";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
 
 
 const MyClasses = () => {
 
     const [axiosSecure] = useAxiosSecure();
     const [myclasses, setMyclasses] = useState([])
+    const [class_name, setClassName] = useState("");
+    const [available_seats, setAvailableSeats] = useState("");
+    const [class_price, setClassPrice] = useState("");
+  
 
     useEffect(() => {
         axiosSecure
@@ -15,9 +18,11 @@ const MyClasses = () => {
             .then((res) => setMyclasses(res.data))
             .catch((error) => console.error(error));
     }, [axiosSecure])
-    
-
-    const handleUpdate = (data ) => {
+   
+    const handleSubmit = (e,data) =>{
+        e.preventDefault();
+        console.log({class_name, available_seats, class_price});
+      
         fetch(`http://localhost:5000/updateclass/${data._id}`, {
             method: "PUT",
             headers: {
@@ -25,14 +30,14 @@ const MyClasses = () => {
             },
             body: JSON.stringify(data)
         })
+        console.log(data)
 
             .then(res => res.json())
             .then(result => {
                 if (result.matchedCount > 0) {
-                    // setMyclasses(data);
                     const updatedClasses = myclasses.map(myclass => {
-                        if (myclass._id === data._id) {
-                          return data;
+                        if (myclass._id === myclass._id) {
+                          return myclass;
                         }
                         return myclass;
                       });
@@ -94,7 +99,7 @@ const MyClasses = () => {
                                             </div>
                                         </td>
                                         <td>{myclass?.available_seats}</td>
-                                        <td>{myclass?.class_price}</td>
+                                        <td>{myclass?.class_price} $</td>
                                         <td>0</td>
                                         <td>...</td>
                                         <th>
@@ -105,8 +110,52 @@ const MyClasses = () => {
   <div className="modal-box">
     <h3 className="font-bold text-lg">Update Class </h3>
     <div>
-    <button onClick={() => handleUpdate(myclass)} className="btn bg-green-300 btn-xs">Update</button>
+        {/* form data 0-------------------> */}
+        <div>
+        <form onSubmit={handleSubmit}>
+                              <div>
+                                <label htmlFor="class-name">Class Name:</label>
+                                <input
+                                  id="class-name"
+                                  type="text"
+                                  value={class_name}
+                                  onChange={(e) =>
+                                    setClassName(e.target.value)
+                                  }
+                                  required
+                                />
+                              </div>
+                              <div>
+                                <label htmlFor="available-seats">
+                                  Available Seats:
+                                </label>
+                                <input
+                                  id="available-seats"
+                                  type="number"
+                                  value={available_seats}
+                                  onChange={(e) =>
+                                    setAvailableSeats(e.target.value)
+                                  }
+                                  required
+                                />
+                              </div>
+                              <div>
+                                <label htmlFor="class-price">Class Price:</label>
+                                <input
+                                  id="class-price"
+                                  type="number"
+                                  value={class_price}
+                                  onChange={(e) =>
+                                    setClassPrice(e.target.value)
+                                  }
+                                  required
+                                />
+                              </div>
+                              <button type="submit">Submit</button>
+                            </form>
+        </div>
     </div>
+        {/* <button onClick={() => handleUpdate(myclass)} className="btn bg-green-300 btn-xs">Update</button> */}
     <div className="modal-action">
       <label htmlFor="my_modal_6" className="btn bg-green-300 btn-xs">Close!</label>
     </div>

@@ -32,8 +32,12 @@ const AddAClass = () => {
 
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
-                    const { class_name, available_seats, class_price } = data;
-                    const newclass = { class_name, class_price: parseFloat(class_price), available_seats, class_image: imgURL };
+// const { class_name, available_seats, class_price } = data;
+// const newclass = { class_name, class_price: parseFloat(class_price), available_seats, class_image: imgURL ,instructor_name: user.displayName,instructor_email: user.email };
+const { class_name, available_seats, class_price, instructor_name: displayName, instructor_email: email } = data;
+const newclass = { class_name, class_price: parseFloat(class_price), available_seats, class_image: imgURL, instructor_name: displayName, instructor_email: email };
+
+                    
                     console.log(newclass);
                     axiosSecure.post('/addaclass', newclass)
                         .then(data => {
@@ -82,6 +86,7 @@ const AddAClass = () => {
                             type="text"
                             value={user.displayName}
                             readOnly
+                            {...register('instructor_name')}
                         />
                     </div>
 
@@ -93,6 +98,7 @@ const AddAClass = () => {
                             type="email"
                             value={user.email}
                             readOnly
+                            {...register('instructor_email')}
                         />
                     </div>
                 </div>
