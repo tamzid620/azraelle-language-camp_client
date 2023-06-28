@@ -91,7 +91,7 @@ const Classes = () => {
                                 <tr key={classesInfo._id}>
 
                                     <th>{index + 1}</th>
-                                    <td><img className="w-[40px] rounded-full" src={classesInfo?.instructor_image} alt="" /></td>
+                                    <td><img className="w-[40px] rounded-full" src={classesInfo?.class_image} alt="" /></td>
                                     <td>{classesInfo?.class_name}</td>
                                     <td>{classesInfo?.instructor_name}</td>
                                     <td>{classesInfo?.available_seats}</td>

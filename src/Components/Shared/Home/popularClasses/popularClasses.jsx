@@ -17,7 +17,7 @@ const PopularClasses = () => {
     return (
         <div className="my-20">
             <h1 className="flex justify-center font-bold text-3xl text-gray-400 uppercase">Popular Classes</h1>
-            <div className="bg-blue-100 p-5 rounded-e-xl mt-10 grid sm:grid-cols-1  lg:grid-cols-3">
+            <div className="change bg-blue-100 p-5 rounded-e-xl mt-10 grid sm:grid-cols-1  lg:grid-cols-3">
                 {
                     classes.map((classItem) => (
                         <div className=" p-2" key={classItem?._id}>

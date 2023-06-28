@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiousSecure";
 import useTitle from "../../../hooks/useTitle";
+import Swal from "sweetalert2";
 
 
 const Instructors = () => {
@@ -15,6 +16,12 @@ const Instructors = () => {
             .catch((error) => console.error(error));
     }, [axiosSecure]);
 
+    const handleSeeClasses = () => {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Access Denied!',
+        });
+      };
 
     return (
         <div>
@@ -46,7 +53,7 @@ const Instructors = () => {
                                     <td>{intructorInfo?.num_classes_taken}</td>
                                     <td>{intructorInfo?.classes_taken} ...etc</td>
                                     <td>
-                                        <button disabled={true} className="btn bg-blue-300 btn-xs font-bold">See Classes</button>
+                                        <button onClick={handleSeeClasses} className="btn bg-blue-300 btn-xs font-bold">See Classes</button>
                                     </td>
                                 </tr>
                             )
