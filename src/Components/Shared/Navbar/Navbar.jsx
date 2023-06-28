@@ -7,6 +7,7 @@ import './Navbar.css'
 import navimg from '../../../../src/assets/logo.jpg'
 
 const auth = getAuth();
+
 const Navbar = () => {
 
     const [user, setUser] = useState({});
@@ -58,7 +59,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar fixed z-10 bg-blue-300 opacity-80 max-w-screen-xl ">
+            <div className="navbar fixed z-10 bg-blue-300 opacity-80 max-w-screen-xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
