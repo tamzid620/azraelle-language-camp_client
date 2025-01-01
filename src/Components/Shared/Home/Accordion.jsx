@@ -10,11 +10,11 @@ const Accordion = () => {
         <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10 '>
 
             <div data-aos="fade-left" className=" flex items-center justify-center image-container" >
-                <img className='rounded-xl' src={accordionimg} alt="" />
+                <img className='rounded-xl sm: w-[350px] lg:w-[500px]' src={accordionimg} alt="" />
             </div>
 
             <div  data-aos="fade-right" className="flex items-center justify-center rounded-xl accordion-content" >
-                <div className="join join-vertical w-full">
+                <div className="join join-vertical sm: w-[350px] lg:w-[500px]">
                     <div className="collapse collapse-arrow join-item border border-base-300">
                         <input type="radio" name="my-accordion-4" checked="checked" />
                         <div className="collapse-title  font-bold text-2xl">

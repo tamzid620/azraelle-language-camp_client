@@ -13,7 +13,7 @@
         ‣we have login and registration option so you need to must login or registration for visit out page
 
 ➌ Used packages/ technology name :
-   =>  in client side ------------
+   =>  in client site ------------
         ‣ react motion 
         ‣ react font-awsome icon
         ‣ stripe 
@@ -25,7 +25,7 @@
         ‣ sweet alert
         ‣ daisy ui
         ‣ vite
-   =>  in client side -------------
+   =>  in server site -------------
         ‣ jason web  token
         ‣ express
         ‣ cors

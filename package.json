@@ -34,9 +34,15 @@
     "react-image-gallery": "^1.2.11",
     "react-photo-album": "^2.2.2",
     "react-query": "^3.39.3",
+<<<<<<< HEAD
     "react-router-dom": "^6.11.2",
     "sort-by": "^0.0.2",
     "sweetalert2": "^11.6.13"
+=======
+    "react-router-dom": "^6.14.0",
+    "sort-by": "^1.2.0",
+    "sweetalert2": "^11.7.11"
+>>>>>>> 21471eb03f270273513bc7d4d1323eace504d300
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
