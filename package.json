@@ -19,7 +19,7 @@
     "axios": "^1.4.0",
     "boxicons": "^2.1.4",
     "cloudinary": "^1.37.1",
-    "firebase": "^9.22.1",
+    "firebase": "^11.1.0",
     "flat-color-icons": "^1.1.0",
     "jsonwebtoken": "^9.0.0",
     "lightgallery": "^2.7.1",
@@ -35,8 +35,8 @@
     "react-photo-album": "^2.2.2",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.11.2",
-    "sort-by": "^1.2.0",
-    "sweetalert2": "^11.7.11"
+    "sort-by": "^0.0.2",
+    "sweetalert2": "^11.6.13"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

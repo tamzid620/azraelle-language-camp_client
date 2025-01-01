@@ -32,5 +32,8 @@
         ‣ mongodb atlas
         ‣ enviroment variable
 
-➍ive site link : https://azraelle-language-camp.web.app/
+➍Live site link : https://azraelle-language-camp.web.app/
+
+color code : light blue: #90CAF9 ;
+color code : dark blue: #5188B5 ;
 

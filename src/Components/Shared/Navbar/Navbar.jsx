@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import app from "../../../firebase/firebase.config";
 import './Navbar.css'
-import navimg from '../../../../src/assets/logo.jpg'
+import navimg from '../../../../src/assets/icons/Azraelle-logo-bgless.png'
 
 const auth = getAuth();
+
 const Navbar = () => {
 
     const [user, setUser] = useState({});
@@ -58,7 +59,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="navbar fixed z-10 bg-blue-300 opacity-80 max-w-screen-xl ">
+            <div className="navbar fixed z-10 bg-blue-300 opacity-80 max-w-screen-xl">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -68,8 +69,7 @@ const Navbar = () => {
                             {header}
                         </ul>
                     </div>
-                        <img style={{width:"50px"}} src={navimg} alt="" />
-                    <p className="normal-case text-xl font-semibold ms-2">Azraelle</p>
+                        <img className="w-[85px]" src={navimg} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

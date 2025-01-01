@@ -1,11 +1,14 @@
 /* Dark Theme Styles */
 .dark-theme {
     background-color: #2b2b2b;
-    color: #ffffff;
+    color: #000000;
+  }
+  .dark-theme .change {
+    background-color: #333333be;
   }
   
   .dark-theme .navbar-start .btn-ghost {
-    color: #ffffff;
+    background-color: #ffffff;
   }
   
   .dark-theme .navbar-center .menu li a {
