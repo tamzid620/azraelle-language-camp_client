@@ -10,7 +10,7 @@ const Layout = () => {
 
     return (
         <div>
-            {noHeaderFooter || <Navbar></Navbar>}
+            {/* {noHeaderFooter || <Navbar></Navbar>} */}
             {noHeaderFooter || <Navigation/>}
             <Outlet></Outlet>
             {noHeaderFooter || <Footer></Footer>}

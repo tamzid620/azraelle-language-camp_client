@@ -7,7 +7,7 @@ import bannerimg4 from '../../../../src/assets/banner4.jpg'
 
 const Banner = () => {
     return (
-        <AwesomeSlider className='mb-20'>
+        <AwesomeSlider className='w-full my-20'>
             <div data-src={bannerimg1} />
             <div data-src={bannerimg2} />
             <div data-src={bannerimg3} />

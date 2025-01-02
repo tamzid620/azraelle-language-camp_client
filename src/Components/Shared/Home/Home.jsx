@@ -13,30 +13,19 @@ const Home = () => {
   Aos.init();
 
   return (
-    <React.Fragment>
+    
+    <div className='xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto'>
       {/* Banner Section ----------------------- */}
-      <div data-aos="fade-right">
-        <Banner />
-      </div>
-
+      <Banner />
       {/* Info section ----------------------- */}
-      <div data-aos="fade-left">
-        <Info />
-      </div>
-
+      <Info />
       {/*Popular Classes Section ----------------------- */}
-      <div data-aos="fade-down">
-        <PopularClasses />
-      </div>
-
+      <PopularClasses />
       {/* Popular Instructors section ----------------------- */}
-      <div data-aos="fade-down">
-        <PopularInstructor />
-      </div>
-
+      <PopularInstructor />
       {/* Accordion   section ----------------------- */}
       <Accordion />
-    </React.Fragment>
+    </div >
   );
 };
 

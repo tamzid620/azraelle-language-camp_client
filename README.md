@@ -36,4 +36,5 @@
 
 color code : light blue: #90CAF9 ;
 color code : dark blue: #5188B5 ;
-
+  style={{fontFamily: "Nunito Sans, serif"}}
+   style={{fontFamily: "PT Sans, serif"}}

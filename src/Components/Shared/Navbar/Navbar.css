@@ -1,27 +1,23 @@
 /* Dark Theme Styles */
 .dark-theme {
-    background-color: #2b2b2b;
-    color: #000000;
-  }
-  .dark-theme .change {
-    background-color: #333333be;
-  }
-  
-  .dark-theme .navbar-start .btn-ghost {
-    background-color: #ffffff;
-  }
-  
-  .dark-theme .navbar-center .menu li a {
+    background-color: #000000;
     color: #ffffff;
   }
+  .dark-theme .change {
+    background-color: #000000be;
+  }
   
-  .dark-theme .navbar-end .btn {
+  .dark-theme  ul li {
+    color: black;
+  }
+  
+  .dark-theme .navButton {
     background-color: #ffffff;
     color: #000000;
   }
   
-  .dark-theme .navbar-end .btn:hover {
-    background-color: #eeeeee;
+  .dark-theme .navButton:hover {
+    background-color: #90CAF9;
   }
   
   /* Light Theme Styles */
@@ -30,20 +26,16 @@
     color: #000000;
   }
   
-  .light-theme .navbar-start .btn-ghost {
-    color: #000000;
+  .light-theme  ul li {
+    color: black;
   }
   
-  .light-theme .navbar-center .menu li a {
-    color: #000000;
-  }
-  
-  .light-theme .navbar-end .btn {
+  .light-theme .navButton {
     background-color: #000000;
     color: #ffffff;
   }
   
-  .light-theme .navbar-end .btn:hover {
-    background-color: #333333;
+  .light-theme .navButton:hover {
+    background-color: #5188B5;
   }
   
