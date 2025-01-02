@@ -1,7 +1,7 @@
-import infoimg1 from '../../../../src/assets/icons/phone.jpg'
-import infoimg2 from '../../../../src/assets/icons/like.jpg'
-import infoimg3 from '../../../../src/assets/icons/setting.jpg'
-import infoimg4 from '../../../../src/assets/icons/message.jpg'
+import infoimg1 from '../../../../../src/assets/icons/phone.jpg'
+import infoimg2 from '../../../../../src/assets/icons/like.jpg'
+import infoimg3 from '../../../../../src/assets/icons/setting.jpg'
+import infoimg4 from '../../../../../src/assets/icons/message.jpg'
 import './info.css'
 
 const Info = () => {

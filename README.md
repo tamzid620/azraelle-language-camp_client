@@ -34,7 +34,7 @@
 
 ➍Live site link : https://azraelle-language-camp.web.app/
 
-color code : light blue: #90CAF9 ;
-color code : dark blue: #5188B5 ;
+color code : light blue: #C5F5FF;
+color code : dark blue: #004C7F ;
   style={{fontFamily: "Nunito Sans, serif"}}
    style={{fontFamily: "PT Sans, serif"}}

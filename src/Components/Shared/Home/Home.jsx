@@ -1,9 +1,9 @@
 import React from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Accordion from "./Accordion";
-import Banner from "./Banner";
-import Info from "./Info";
+import Accordion from "./Accordion/Accordion";
+import Banner from "./Banner/Banner";
+import Info from "./info/Info";
 import PopularClasses from "./popularClasses/popularClasses";
 import PopularInstructor from "./popularInstructor/popularInstructor";
 import useTitle from "../../../hooks/useTitle";
@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     
-    <div className='xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto'>
+    <div className='xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto lg:mt-[85px] md:mt-[60px] sm: mt-[60px]'>
       {/* Banner Section ----------------------- */}
       <Banner />
       {/* Info section ----------------------- */}

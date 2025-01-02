@@ -1,4 +1,4 @@
-import accordionimg from '../../../../src/assets/icons/accordion .jpg';
+import accordionimg from '../../../../../src/assets/icons/accordion .jpg';
 import Aos from "aos";
 import './Accordion.css'
 
