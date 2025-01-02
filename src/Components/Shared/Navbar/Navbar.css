@@ -1,7 +1,7 @@
 /* Dark Theme Styles */
 .dark-theme {
     background-color: #000000;
-    color: #ffffff;
+    color: white;
   }
   .dark-theme .change {
     background-color: #000000be;
@@ -12,7 +12,7 @@
   }
   
   .dark-theme .navButton {
-    background-color: #ffffff;
+    background-color: white;
     color: #000000;
   }
   
@@ -22,7 +22,7 @@
   
   /* Light Theme Styles */
   .light-theme {
-    background-color: #f4f4f4;
+    background-color: white;
     color: #000000;
   }
   
@@ -32,7 +32,7 @@
   
   .light-theme .navButton {
     background-color: #000000;
-    color: #ffffff;
+    color: white;
   }
   
   .light-theme .navButton:hover {

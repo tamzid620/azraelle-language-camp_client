@@ -1,62 +1,66 @@
-import infoimg1 from '../../../../../src/assets/icons/phone.jpg'
-import infoimg2 from '../../../../../src/assets/icons/like.jpg'
-import infoimg3 from '../../../../../src/assets/icons/setting.jpg'
-import infoimg4 from '../../../../../src/assets/icons/message.jpg'
-import './info.css'
+import infoimg1 from "../../../../../src/assets/icons/spoken.png";
+import infoimg2 from "../../../../../src/assets/icons/language.png";
+import infoimg3 from "../../../../../src/assets/icons/potential.png";
+import infoimg4 from "../../../../../src/assets/icons/Connect.png";
+import "./info.css";
+import { info } from "autoprefixer";
+
+const infoData = [
+  {
+    icon: infoimg1,
+    title: "Speak Confidently with Azraelle",
+    disc: "Unlock your potential with our expert-led courses, designed for learners of all levels. Start speaking confidently today!",
+  },
+  {
+    icon: infoimg2,
+    title: "Fun, Fast Language Learning",
+    disc: "Join Azraelle and explore interactive lessons, real-world practice, and a vibrant community to support your journey.",
+  },
+  {
+    icon: infoimg3,
+    title: "Unlock Your Linguistic Potential",
+    disc: "At Azraelle, we make language learning simple and effective. Embrace new cultures and expand your horizons.",
+  },
+  {
+    icon: infoimg4,
+    title: "Learn. Speak & Stay Connected",
+    disc: "From beginner to fluent, Azraelle offers tailored courses to help you achieve your language goals. Start your journey now!",
+  },
+];
 
 const Info = () => {
-    return (
-        <div className='grid sm:grid-cols-1 lg:grid-cols-4 py-9 my-20 bg-blue-200 '>
-
-            <div className='flex mb-5 group ps-2'>
-                <div className='pe-5'>
-                    <img className='w-[60px]' src={infoimg1} alt="" />
-                </div>
-                <div>
-                    <h1 className='font-bold text-blue-800 text-2xl mb-3'>POWERFUL LEARNING <br /> MANAGEMENT <br /> SYSTEM</h1>
-                    <p className='font-semibold text-gray-600'>Outstanding features for highly <br /> customizable Courses, Units, <br /> Lessons, and Quizzes</p>
-                </div>
-            </div>
-
-
-
-            <div className='flex mb-5 group'>
-                <div className='pe-5'>
-                    <img className='w-[60px]' src={infoimg2} alt="" />
-                </div>
-                <div>
-                    <h1 className='font-bold text-blue-800 text-2xl mb-3'>EFFORTLESSLY <br /> MANAGE COURSES</h1>
-                    <p className='font-semibold text-gray-600'>User-friendly Course <br /> Management Powered by <br /> Masterstudy LMS Plugin</p>
-                </div>
-            </div>
-
-
-
-            <div className='flex mb-5 group'>
-                <div className='pe-5'>
-                    <img className='w-[60px]' src={infoimg3} alt="" />
-                </div>
-                <div>
-                    <h1 className='font-bold text-blue-800 text-2xl mb-3'>EASILY SELL COURSES <br /> ONLINE</h1>
-                    <p className='font-semibold text-gray-600'>Enjoy the flexibility of <br /> education WordPress theme <br /> and easily manage online <br /> sales.</p>
-                </div>
-            </div>
-
-
-
-            <div className='flex pe-2 group'>
-                <div className='pe-5'>
-                    <img className='w-[60px]' src={infoimg4} alt="" />
-                </div>
-                <div>
-                    <h1 className='font-bold text-blue-800 text-2xl mb-3'>24/7 PROFESSIONAL <br /> SUPPORT</h1>
-                    <p className='font-semibold text-gray-600'>We care about our customers <br /> and provide free 24/7 support. <br /> Ask your questions via Ticket <br /> System.</p>
-                </div>
-            </div>
-
-
+  return (
+    <div className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 lg:gap-10 md:gap-8 lg:mx-0 md:mx-4 sm: mx-6 mt-24">
+      {infoData.map(({ icon, title, disc }, index) => (
+        <div
+          key={index}
+          className="relative bg-[#C5F5FF] w-full h-[215px] shadow-gray-500 shadow-lg hover:shadow-2xl md:mb-5 sm: mb-12"
+        >
+          <div className="relative px-3 pt-10 pb-3 rounded-sm ">
+            <h1
+              style={{ fontFamily: "Nunito Sans, serif" }}
+              className="text-lg text-black uppercase font-extrabold mb-2"
+            >
+              {title}
+            </h1>
+            <p
+              style={{ fontFamily: "PT Sans, serif" }}
+              className="text-gray-600"
+            >
+              {disc}
+            </p>
+          </div>
+          <div className="absolute -top-8 left-4 shadow-gray-500 shadow-lg">
+            <img
+              className="bg-[#004C7F] p-2 rounded-sm w-[60px]"
+              src={icon}
+              alt=""
+            />
+          </div>
         </div>
-    );
+      ))}
+    </div>
+  );
 };
 
 export default Info;
