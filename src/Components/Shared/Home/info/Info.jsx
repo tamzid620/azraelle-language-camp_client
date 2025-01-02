@@ -3,7 +3,6 @@ import infoimg2 from "../../../../../src/assets/icons/language.png";
 import infoimg3 from "../../../../../src/assets/icons/potential.png";
 import infoimg4 from "../../../../../src/assets/icons/Connect.png";
 import "./info.css";
-import { info } from "autoprefixer";
 
 const infoData = [
   {
@@ -34,23 +33,23 @@ const Info = () => {
       {infoData.map(({ icon, title, disc }, index) => (
         <div
           key={index}
-          className="relative bg-[#C5F5FF] w-full h-[215px] shadow-gray-500 shadow-lg hover:shadow-2xl md:mb-5 sm: mb-12"
+          className="relative bg-[#004C7F] w-full h-[215px] shadow-gray-500 shadow-lg hover:shadow-2xl md:mb-5 sm: mb-12"
         >
           <div className="relative px-3 pt-10 pb-3 rounded-sm ">
             <h1
               style={{ fontFamily: "Nunito Sans, serif" }}
-              className="text-lg text-black uppercase font-extrabold mb-2"
+              className="text-lg text-white uppercase font-extrabold mb-2"
             >
               {title}
             </h1>
             <p
               style={{ fontFamily: "PT Sans, serif" }}
-              className="text-gray-600"
+              className="text-gray-100"
             >
               {disc}
             </p>
           </div>
-          <div className="absolute -top-8 left-4 shadow-gray-500 shadow-lg">
+          <div className="absolute -top-8 left-4 shadow-gray-200 shadow-md">
             <img
               className="bg-[#004C7F] p-2 rounded-sm w-[60px]"
               src={icon}
