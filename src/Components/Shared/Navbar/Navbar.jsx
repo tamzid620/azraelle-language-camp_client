@@ -15,6 +15,7 @@ const Navbar = () => {
   const darkThemeClass = "dark-theme";
   const [menuOpen, setMenuOpen] = useState(false);
 
+
   const handleMenuOpen = () => {
     setMenuOpen(!menuOpen);
   };

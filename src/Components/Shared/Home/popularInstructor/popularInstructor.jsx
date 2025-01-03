@@ -26,7 +26,7 @@ const PopularInstructor = () => {
             <div className="w-full rounded-sm text-white bg-[#004C7F] shadow-gray-500 shadow-lg hover:shadow-xl">
               <figure>
                 <img
-                className="w-full h-[400px] rounded-t-sm bg-black"
+                className="w-full h-[300px] px-12 rounded-t-sm bg-black"
                   src={instructorItem?.instructor_image}
                   alt= {instructorItem?.instructor_name}
                 />

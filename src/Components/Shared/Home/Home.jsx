@@ -6,10 +6,14 @@ import Info from "./info/Info";
 import PopularClasses from "./popularClasses/popularClasses";
 import PopularInstructor from "./popularInstructor/popularInstructor";
 import useTitle from "../../../hooks/useTitle";
+import { useEffect } from "react";
 
 const Home = () => {
   useTitle("Home");
-  Aos.init();
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
     

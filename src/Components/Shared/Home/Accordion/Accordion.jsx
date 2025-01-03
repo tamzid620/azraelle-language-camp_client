@@ -1,57 +1,89 @@
-import accordionimg from '../../../../../src/assets/icons/accordion .jpg';
+import { useEffect, useState } from "react";
 import Aos from "aos";
-import './Accordion.css'
+import accordionimg from "../../../../../src/assets/icons/accordion-image.jpg";
+
+const faqs = [
+  {
+    question: "What languages can I learn with Azraelle?",
+    answer:
+      "Azraelle offers courses in Spanish, French, German, Mandarin, and many more popular languages.",
+  },
+  {
+    question: "Are the courses suitable for beginners?",
+    answer:
+      "Yes! Azraelle provides tailored content for beginners, intermediates, and advanced learners.",
+  },
+  {
+    question: "Do I get a certificate after completing a course?",
+    answer:
+      "Yes, all our courses come with a verified certificate upon successful completion.",
+  },
+  {
+    question: "Can I access the courses on mobile devices?",
+    answer:
+      "Absolutely! Azraelle is accessible on both desktop and mobile devices for your convenience.",
+  },
+  {
+    question: "What is the duration of each course?",
+    answer:
+      "The duration varies, but most courses range from 4 to 12 weeks, depending on your pace.",
+  },
+];
+
+// eslint-disable-next-line react/prop-types
+const AccordionItem = ({ question, answer, isActive, onToggle }) => (
+  <div className="border-b border-gray-300">
+    <button
+      onClick={onToggle}
+      className="w-full flex justify-between items-center py-4 focus:outline-none"
+    >
+      <span className="text-xl  font-bold">{question}</span>
+      <span>{isActive ? "-" : "+"}</span>
+    </button>
+    {isActive && <p   style={{fontFamily: "PT Sans, serif"}} className="text-gray-600 text-lg mt-2">{answer}</p>}
+  </div>
+);
 
 const Accordion = () => {
+  useEffect(() => {
     Aos.init();
+  }, []);
+  const [activeIndex, setActiveIndex] = useState(null);
 
-    return (
-        <div className=" accordion-container">
-        <div className='grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10 '>
+  const toggleAccordion = (index) => {
+    setActiveIndex(index === activeIndex ? null : index);
+  };
 
-            <div data-aos="fade-left" className=" flex items-center justify-center image-container" >
-                <img className='rounded-xl sm: w-[350px] lg:w-[500px]' src={accordionimg} alt="" />
-            </div>
-
-            <div  data-aos="fade-right" className="flex items-center justify-center rounded-xl accordion-content" >
-                <div className="join join-vertical sm: w-[350px] lg:w-[500px]">
-                    <div className="collapse collapse-arrow join-item border border-base-300">
-                        <input type="radio" name="my-accordion-4" checked="checked" />
-                        <div className="collapse-title  font-bold text-2xl">
-                            WHAT IS ONLINE EDUCATION?
-                        </div>
-                        <div className="collapse-content">
-                            <p className='font-semibold '>Let’s start with the defining process of online education. First of all, we get our knowledge from the Internet when we study online. There we usually use such sources as online video tutorials and lectures combined and bundled in courses, live presentations and webinars, ebooks, and slideshows. Sometimes, we need to complement these activities with tasks to retain gathered information. This involves different quizzes, projects, and assignments. And it becomes more convenient and practical if everything described is accessible in one place. So the need for a particular learning platform or website arises.</p>
-                        </div>
-                    </div>
-
-                    <div className="collapse collapse-arrow join-item border border-base-300">
-                        <input type="radio" name="my-accordion-4" />
-                        <div className="collapse-title font-bold text-2xl">
-                            WEBSITE AS A MEAN OF GAINING KNOWLEDGE
-                        </div>
-                        <div className="collapse-content">
-                            <p className='font-semibold '>Today one of the most popular systems used for the creation of similar websites is WordPress. WordPress makes it easy to build your own website even for non-technical users with no coding skills. WordPress is a huge platform and community unifying web and theme developers. WP themes are referred to as a collection of templates and stylesheets used to define the appearance and display of a WordPress powered website. You can change and manage them as you want. There are thousands of themes available for free or on a paid basis. Themes are developed for every niche in existence. Sports, business, travel, lifestyle, education website owners can pay for affordable products that are sure to increase their chances of success.
-
-                                No worries about installation, high level of user-friendliness and customization, interactive tools and fast loading speeds, and all other features can definitely add value to any website.</p>
-                        </div>
-                    </div>
-
-                    <div className="collapse collapse-arrow join-item border border-base-300">
-                        <input type="radio" name="my-accordion-4" />
-                        <div className="collapse-title font-bold text-2xl">
-                            Benefits Of Learning foreign languages
-                        </div>
-                        <div className="collapse-content">
-                            <p className='font-semibold '>enhances cognitive abilities and improves memory, attention span, and problem-solving skills. When learning a new language, you engage your brain in complex tasks, such as comprehension, interpretation, and communication, which stimulate mental agility and enhance overall cognitive function.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+  return (
+    <div
+      style={{ fontFamily: "Nunito Sans, serif" }}
+      className="lg:mx-0 md:mx-4 sm: mx-6 mt-20"
+    >
+      <h1 className="flex justify-center font-extrabold text-3xl uppercase mb-10">
+        Frequently Asked Questions
+      </h1>
+      <div>
+        <div className="grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10 ">
+          {/* image section */}
+          <div data-aos="fade-left">
+            <img className="rounded-sm bg-black w-full h-[300px]" src={accordionimg} alt="" />
+          </div>
+          {/* accordion section  */}
+          <div data-aos="fade-right">
+            {faqs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                question={faq.question}
+                answer={faq.answer}
+                isActive={activeIndex === index}
+                onToggle={() => toggleAccordion(index)}
+              />
+            ))}
+          </div>
         </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Accordion;
