@@ -32,7 +32,7 @@ const faqs = [
 
 // eslint-disable-next-line react/prop-types
 const AccordionItem = ({ question, answer, isActive, onToggle }) => (
-  <div className="border-b border-gray-300">
+  <div>
     <button
       onClick={onToggle}
       className="w-full flex justify-between items-center py-4 focus:outline-none"
@@ -66,10 +66,10 @@ const Accordion = () => {
         <div className="grid sm:grid-cols-1 lg:grid-cols-2 mb-20 gap-10 ">
           {/* image section */}
           <div data-aos="fade-left">
-            <img className="rounded-sm bg-black w-full h-[300px]" src={accordionimg} alt="" />
+            <img className="rounded-sm bg-black w-full h-[350px] shadow-xl" src={accordionimg} alt="" />
           </div>
           {/* accordion section  */}
-          <div data-aos="fade-right">
+          <div data-aos="fade-right" className="drop-shadow-lg border-t-2 shadow-lg py-5 px-3">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
