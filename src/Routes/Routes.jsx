@@ -1,4 +1,4 @@
-import {createBrowserRouter} from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Components/Shared/Layout/Layout";
 import ErrorPage from "../Components/Pages/ErrorPage/ErrorPage";
 import Home from "../Components/Shared/Home/Home";
@@ -18,79 +18,122 @@ import ManageClasses from "../Components/Pages/DashBoard/DashBoardMenu/ManageCla
 import AdminRoute from "./AdminRoute";
 import InstructorRoute from "./InstructorRoute";
 import Payment from "../Components/Pages/DashBoard/DashBoardMenu/Payment/Payment";
-  
+
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Layout></Layout>,
-      errorElement: <ErrorPage></ErrorPage>,
-      children:[
-        {
-            path: "/",
-            element:<Home></Home>,
-        },
-        {
-            path: "/instructors",
-            element:<PrivateRoutes><Instructors></Instructors></PrivateRoutes>,
-        },
-        {
-            path: "/classes",
-            element:<PrivateRoutes><Classes></Classes></PrivateRoutes>,
-        },
-        {
-            path: "/login",
-            element:<Login></Login>,
-        },
-        {
-            path: "/register",
-            element:<Register></Register>,
-        },
-      ]
-    },
-    {
-        path:"dashboard",
-        element:<PrivateRoutes><DashBoard></DashBoard></PrivateRoutes>,
-        children: [
+  {
+    path: "/",
+    element: <Layout></Layout>,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/instructors",
+        element: (
+          <PrivateRoutes>
+            <Instructors />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/classes",
+        element: (
+          <PrivateRoutes>
+            <Classes />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: (
+      <PrivateRoutes>
+        <DashBoard />
+      </PrivateRoutes>
+    ),
+    children: [
+      // ADMIN ROUTES------------------------->
+      {
+        path: "manageclasses",
+        element: (
+          <AdminRoute>
+            <ManageClasses />
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "manageusers",
+        element: (
+          <AdminRoute>
+            <ManageUsers />
+          </AdminRoute>
+        ),
+      },
 
-            // ADMIN ROUTES------------------------->
-            {
-                path:'manageclasses',
-                element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>,
-            },
-            {
-                path:'manageusers',
-                element:<AdminRoute><ManageUsers></ManageUsers></AdminRoute>,
-            },
+      // INSTRUCTOR ROUTES------------------------->
+      {
+        path: "addaclass",
+        element: (
+          <InstructorRoute>
+            <AddAClass />
+          </InstructorRoute>
+        ),
+      },
+      {
+        path: "myclasses",
+        element: (
+          <InstructorRoute>
+            <MyClasses />
+          </InstructorRoute>
+        ),
+      },
 
-             // INSTRUCTOR ROUTES------------------------->
-            {
-                path:'addaclass',
-                element:<InstructorRoute><AddAClass></AddAClass></InstructorRoute>,
-            },
-            {
-                path:'myclasses',
-                element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>,
-            },
-
-            // STUDENT ROUTES------------------------->
-            {
-                path:'myselectedclass',
-                element:<PrivateRoutes><MySelectedClass></MySelectedClass></PrivateRoutes>,
-            },
-            {
-                path:'myenrolledclass',
-                element:<PrivateRoutes><MyEnrolledClass></MyEnrolledClass></PrivateRoutes>,
-            },
-            {
-                path:'paymenthistory',
-                element:<PrivateRoutes><PaymentHistory></PaymentHistory></PrivateRoutes>,
-            },
-            {
-                path:'payment',
-                element:<PrivateRoutes><Payment></Payment></PrivateRoutes>,
-            },
-        ]
-    }
-  ]);
+      // STUDENT ROUTES------------------------->
+      {
+        path: "myselectedclass",
+        element: (
+          <PrivateRoutes>
+            <MySelectedClass />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "myenrolledclass",
+        element: (
+          <PrivateRoutes>
+            <MyEnrolledClass />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "paymenthistory",
+        element: (
+          <PrivateRoutes>
+            <PaymentHistory />
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "payment",
+        element: (
+          <PrivateRoutes>
+            <Payment />
+          </PrivateRoutes>
+        ),
+      },
+    ],
+  },
+]);
 
 export default router;
