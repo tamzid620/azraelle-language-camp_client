@@ -40,7 +40,7 @@ const AccordionItem = ({ question, answer, isActive, onToggle }) => (
       <span className="text-xl  font-bold">{question}</span>
       <span>{isActive ? "-" : "+"}</span>
     </button>
-    {isActive && <p   style={{fontFamily: "PT Sans, serif"}} className="text-gray-600 text-lg mt-2">{answer}</p>}
+    {isActive && <p   style={{fontFamily: "PT Sans, serif"}} className="text-gray-400 text-lg mt-2">{answer}</p>}
   </div>
 );
 

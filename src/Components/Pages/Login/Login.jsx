@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
 import { FcGoogle } from "react-icons/fc";
@@ -15,9 +15,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
   const { signIn, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation();
 
-  const form = location.state?.form?.pathname || "/";
 
   const onSubmit = (data) => {
     const { email, password } = data;
@@ -27,13 +25,13 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate(form, { replace: true });
         Swal.fire({
           icon: "success",
           title: "Login SuccessFully",
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate('/') ;
       })
       .catch((error) => {
         console.log(error);
@@ -53,13 +51,13 @@ const Login = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        navigate(from, { replace: true });
         Swal.fire({
           icon: "success",
           title: "Login SuccessFully with Google ",
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate('/') ;
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -76,15 +74,13 @@ const Login = () => {
   };
 
   return (
-    <div >
-        <div className="relative">
-            <img className="relative w-full h-screen" src={loginBg} alt="" />
-        </div>
-      <form
-      style={{fontFamily: "Nunito Sans, serif"}}
-        className="absolute top-0 inset-0 md:w-[400px] sm: w-full h-[430px] p-[20px] bg-white drop-shadow-lg shadow-black rounded-sm border-t-2 mx-auto"
-        onSubmit={handleSubmit(onSubmit)}
-      >
+    <div className="relative h-screen w-full flex items-center justify-center">
+    <img className="absolute w-full h-full object-cover" src={loginBg} alt="" />
+    <form
+      style={{ fontFamily: "Nunito Sans, serif" }}
+      className="relative md:w-[400px] w-full max-w-[90%] h-[450px] p-[20px] bg-white drop-shadow-lg shadow-black rounded-md border-t-2"
+      onSubmit={handleSubmit(onSubmit)}
+    >
         <h2 className="font-extrabold text-xl uppercase text-center">Please Login</h2>
         {/* Email input  */}
         <div className="text-sm">
@@ -105,7 +101,7 @@ const Login = () => {
               {...register("password", { required: true })}
             />
             <span
-              className="text-xs bg-blue-500 text-white hover:bg-slate-500"
+              className="text-xs text-blue-500  hover:text-slate-500 underline"
               onClick={() => setShowPassword(!showPassword)}
             >
               Show Password
@@ -117,11 +113,21 @@ const Login = () => {
           <button className="mt-2 uppercase font-bold text-lg w-full text-center py-2  bg-[#004C7F] text-white hover:bg-[#C5F5FF] hover:text-black  hover:shadow-xl mb-4 rounded-sm" value="Login" type="submit">Login</button>
         </div>
         {/* go to register page option  */}
-        <div className="flex gap-1">
+        <div className="flex justify-between items-center text-black">
+          <div>
           <p>Don't have an account?</p>
           <Link to="/register">
             <a className="underline text-blue-500 hover:text-blue-300">Register</a>
           </Link>
+          </div>
+          <div>
+          <span
+              className="text-xs bg-blue-500 text-white hover:bg-slate-500"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              Back To Home
+            </span>
+          </div>
         </div>
         {/* google login option  */}
         <div className="flex justify-center mt-3 border-t-2 pt-2">
