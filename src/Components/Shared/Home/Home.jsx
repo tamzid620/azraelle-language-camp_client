@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     
-    <div className='xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto lg:mt-[85px] md:mt-[60px] sm: mt-[60px]'>
+    <main className='xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto'>
       {/* Banner Section ----------------------- */}
       <Banner />
       {/* Info section ----------------------- */}
@@ -28,7 +28,7 @@ const Home = () => {
       <PopularInstructor />
       {/* Accordion   section ----------------------- */}
       <Accordion />
-    </div >
+    </main >
   );
 };
 

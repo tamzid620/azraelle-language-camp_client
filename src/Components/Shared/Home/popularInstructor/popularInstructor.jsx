@@ -18,7 +18,7 @@ const PopularInstructor = () => {
       <h1  className="flex justify-center font-extrabold text-3xl uppercase mb-10">
         Popular Instructor
       </h1>
-      <div  className=" grid lg:grid-cols-3 md:grid-cols-1 sm: grid-cols-1 gap-5">
+      <div  className=" grid lg:grid-cols-3 md:grid-cols-2 sm: grid-cols-1 gap-5">
         {instructors.map((instructorItem) => (
           <div key={instructorItem?._id}>
             {/* <img className="rounded-xl" style={{width:"500px" , height:"400px"}} src={instructorItem?.instructor_image} alt=""/>

@@ -81,7 +81,7 @@ const Login = () => {
       />
       <form
         style={{ fontFamily: "Nunito Sans, serif" }}
-        className="relative md:w-[400px] w-full h-[450px] p-[20px] bg-white drop-shadow-lg shadow-black rounded-md border-t-2"
+        className="relative md:w-[400px] w-full h-[480px] p-[20px] bg-white drop-shadow-lg shadow-black rounded-md border-t-2"
         onSubmit={handleSubmit(onSubmit)}
       >
         <h2 className="font-extrabold text-xl uppercase text-center">

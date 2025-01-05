@@ -59,7 +59,7 @@ const Accordion = () => {
       style={{ fontFamily: "Nunito Sans, serif" }}
       className="lg:mx-0 md:mx-4 sm: mx-6 mt-20"
     >
-      <h1 className="flex justify-center font-extrabold text-3xl uppercase mb-10">
+      <h1 className="flex justify-center font-extrabold text-3xl uppercase pb-10">
         Frequently Asked Questions
       </h1>
       <div>

@@ -8,7 +8,7 @@ import navimg from "../../../../src/assets/icons/Azraelle-logo-bgless.png";
 import menuImg from "../../../../src/assets/icons/menu.png";
 const auth = getAuth(app);
 
-const Navbar = () => {
+const Navigation = () => {
   const [user, setUser] = useState({});
   const [darkTheme, setDarkTheme] = useState(false);
   const lightThemeClass = "light-theme";
@@ -56,18 +56,18 @@ const Navbar = () => {
   };
 
   return (
-    <div
+    <nav
         style={{ fontFamily: "Nunito Sans, serif" }}
-        className="bg-[#004C7F] fixed top-0 py-1 z-10 w-full shadow-sm shadow-gray-900 
-        "
+        className="bg-[#004C7F] shadow-gray-900 py-1 w-full"
       >
-        <nav className="xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto ">
+        <div className=" xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto">
           {/* nav for large device  */}
-          <div className="lg:flex md:hidden sm: hidden justify-between px-4">
+          <div className="flex justify-between items-center px-4">
             <div>
               <img className="w-[85px]" src={navimg} alt="" />
             </div>
-            <div className="flex gap-52 ">
+{/* 88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */}
+            <div className="lg:flex md:hidden sm: hidden lg:gap-52 ">
               {/* ul li section  */}
               <div className=" flex items-center">
                 <ul className="flex justify-between gap-10 uppercase font-bold text-sm">
@@ -122,12 +122,8 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-          </div>
-          {/* nav for small device  */}
-          <div className="lg:hidden md:flex sm: flex justify-between items-center px-3 py-0">
-            <div>
-              <img className="w-[60px]" src={navimg} alt="" />
-            </div>
+{/* 88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */}
+            <div className="lg:hidden md:block sm: block">
             <div onClick={handleMenuOpen}>
               <img
                 className="w-[25px] drop-shadow-xl relative"
@@ -189,10 +185,11 @@ const Navbar = () => {
             ) : (
               <></>
             )}
+            </div>
           </div>
-    </nav>
-      </div>
+    </div>
+      </nav>
   );
 };
 
-export default Navbar;
+export default Navigation;

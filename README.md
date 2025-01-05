@@ -38,3 +38,6 @@ color code : light blue: #C5F5FF;
 color code : dark blue: #004C7F ;
   style={{fontFamily: "Nunito Sans, serif"}}
    style={{fontFamily: "PT Sans, serif"}}
+
+ fixed top-0 z-50
+ lg:mt-[83px] md:mt-[60px] sm: mt-[83px]
