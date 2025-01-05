@@ -34,7 +34,7 @@ const Instructors = () => {
         style={{ fontFamily: "PT Sans, serif" }}
         className="overflow-x-auto my-10 "
       >
-        <table className="table">
+        <table className="table table-zebra">
           {/* head */}
           <thead className="bg-[#C5F5FF] text-[#004C7F] font-bold uppercase">
             <tr>

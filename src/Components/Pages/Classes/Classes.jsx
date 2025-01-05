@@ -68,12 +68,20 @@ const Classes = () => {
 
 
     return (
-        <div>
-            <h1 className="flex justify-center font-bold text-3xl text-blue-900 uppercase py-20">Classes</h1>
-            <div className="overflow-x-auto my-10">
-                <table className="table">
+        <div className="xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm lg:mx-auto md:mx-4 sm: mx-4">
+        <h1
+          style={{ fontFamily: "Nunito Sans, serif" }}
+          className="flex justify-center font-extrabold text-3xl text-[#004C7F] uppercase mt-20"
+        >
+          All Classes
+        </h1>
+        <div
+        style={{ fontFamily: "PT Sans, serif" }}
+        className="overflow-x-auto my-10 "
+      >
+                <table className="table table-zebra">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-[#C5F5FF] text-[#004C7F] font-bold uppercase">
                         <tr>
                             <th></th>
                             <th>Photo</th>
@@ -89,7 +97,6 @@ const Classes = () => {
                         {
                             classesInfos.map((classesInfo, index) =>
                                 <tr key={classesInfo._id}>
-
                                     <th>{index + 1}</th>
                                     <td><img className="w-[40px] rounded-full" src={classesInfo?.class_image} alt="" /></td>
                                     <td>{classesInfo?.class_name}</td>
@@ -98,10 +105,12 @@ const Classes = () => {
                                     <td>{classesInfo?.class_price} $</td>
                                     <td>
                                         <button
-                                            onClick={() => handleSelect(classesInfo)}
-                                            className="btn bg-blue-300 btn-xs font-bold"
-                                        >Select
-                                        </button>
+                                        onClick={() => handleSelect(classesInfo)}
+                    className="text-sm bg-[#004C7F] text-white hover:bg-[#C5F5FF] hover:text-black hover:shadow-xl px-3 py-2 rounded-sm"
+                  >
+                    
+                    Select Class
+                  </button>
                                     </td>
                                 </tr>
                             )
