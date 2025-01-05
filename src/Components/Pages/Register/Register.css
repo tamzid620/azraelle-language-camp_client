@@ -1,38 +1,18 @@
-.register-form {
-  max-width: 500px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
+label{
+  color:  black !important;
+  font-weight: 700 !important;
 }
-
-.form-group {
-  margin-bottom: 20px;
+input{
+  border: 1px solid rgb(154, 147, 147) !important;
+  border-radius: 2px !important;
 }
-
-label {
-  display: block;
-  font-weight: bold;
+select{
+  border: 1px solid rgb(154, 147, 147) !important;
+  border-radius: 2px !important;
 }
-
-input[type='text'],
-input[type='email'],
-input[type='password'],
-textarea,
-select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button[type='submit'] {
-    cursor: pointer;
-  }
 
 .error {
-  color: red;
-  font-size: 12px;
-  margin-top: 5px;
+  color: red !important;
+  font-size: 12px !important;
+  margin-top: 3px !important;
 }
