@@ -84,8 +84,9 @@ const Login = () => {
         className="relative md:w-[400px] w-full h-[480px] p-[20px] bg-white drop-shadow-lg shadow-black rounded-md border-t-2"
         onSubmit={handleSubmit(onSubmit)}
       >
-        <h2 className="font-extrabold text-xl uppercase text-center">
-          Please Login
+        <h2 className="font-extrabold text-sm text-center">
+        Email: admin@test.com <br />
+        Password: 06J@nyu@ry2@25
         </h2>
         {/* Email input  */}
         <div className="text-sm">
