@@ -8,10 +8,10 @@ import {
   FcReading,
   FcAddDatabase,
 } from "react-icons/fc";
-import useAdmin from "../../../hooks/useAdmin";
 import useInstructor from "../../../hooks/useInstructor";
 import { Fade } from "react-awesome-reveal";
 import useTitle from "../../../hooks/useTitle";
+import useAdmin from "../../../hooks/useAdmin";
 
 const DashBoard = () => {
   useTitle("DashBoard");
