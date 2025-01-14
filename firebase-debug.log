@@ -1,0 +1,88 @@
+[debug] [2023-06-12T17:13:54.723Z] ----------------------------------------------------------------------
+[debug] [2023-06-12T17:13:54.727Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\abc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-06-12T17:13:54.729Z] CLI Version:   11.27.0
+[debug] [2023-06-12T17:13:54.730Z] Platform:      win32
+[debug] [2023-06-12T17:13:54.730Z] Node Version:  v18.14.1
+[debug] [2023-06-12T17:13:54.732Z] Time:          Mon Jun 12 2023 23:13:54 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-06-12T17:13:54.732Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-12T17:13:54.908Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-12T17:13:54.910Z] > authorizing via signed-in user (tamzid620@gmail.com)
+[debug] [2023-06-12T17:13:54.910Z] [iam] checking project azraelle-language-camp for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-06-12T17:13:54.915Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/azraelle-language-camp:testIamPermissions [none]
+[debug] [2023-06-12T17:13:54.915Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/azraelle-language-camp:testIamPermissions x-goog-quota-user=projects/azraelle-language-camp
+[debug] [2023-06-12T17:13:54.916Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/azraelle-language-camp:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-06-12T17:14:16.050Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/azraelle-language-camp:testIamPermissions
+[debug] [2023-06-12T17:14:16.055Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/azraelle-language-camp [none]
+[debug] [2023-06-12T17:14:25.472Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/azraelle-language-camp 200
+[debug] [2023-06-12T17:14:25.472Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/azraelle-language-camp {"projectId":"azraelle-language-camp","projectNumber":"777678993594","displayName":"azraelle-language-camp","name":"projects/azraelle-language-camp","resources":{"hostingSite":"azraelle-language-camp"},"state":"ACTIVE","etag":"1_9d78e0e4-c19b-4856-9c9b-9575ab2c21c9"}
+[info] 
+[info] === Deploying to 'azraelle-language-camp'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2023-06-12T17:14:25.489Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions [none]
+[debug] [2023-06-12T17:14:25.489Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2023-06-12T17:14:27.171Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions 200
+[debug] [2023-06-12T17:14:27.171Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions {"name":"projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a","status":"CREATED","config":{},"labels":{"deployment-tool":"cli-firebase"}}
+[info] i  hosting[azraelle-language-camp]: beginning deploy... 
+[info] i  hosting[azraelle-language-camp]: found 16 files in dist 
+[debug] [2023-06-12T17:14:27.211Z] [hosting] uploading with 200 concurrency
+[debug] [2023-06-12T17:14:27.464Z] [hosting] hash cache [ZGlzdA] stored for 16 files
+[debug] [2023-06-12T17:14:27.465Z] [hosting][hash queue][FINAL] {"max":233,"min":13,"avg":78.75,"active":0,"complete":16,"success":16,"errored":0,"retried":0,"total":16,"elapsed":243}
+[debug] [2023-06-12T17:14:27.466Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a:populateFiles [none]
+[debug] [2023-06-12T17:14:27.466Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a:populateFiles {"files":{"/courses.json":"38182fd7c959bbf3ba47b0e9ec5765f08ccc83a14b2d3ebefe576212f7675443","/vite.svg":"59ec4b6085a0cb1bf712a5e48dd5f35b08e34830d49c2026c18241be04e05d5a","/index.html":"b042f19dfb6744df1d291e2f33b322103cbd5689987b9626b8128b0397616be1","/assets/like-5db0682c.jpg":"5071ab650c2a96a1ec4f6f407305c2577e2ee18be8253e50dc36a3ba5a6e787d","/assets/phone-fd092916.jpg":"21dee721a4203f941db962b0b20ef3bc7383dbed84dac8884966542de502da52","/assets/index-7869b148.css":"2e2ada3e6708f387a617430e10af357fb943e932669c54a3364a22c4020d485c","/assets/setting-3a9acebd.jpg":"64481b9e9be51fd6369f8d1fd62d71ce5ccafe537fcadc139f6e7f57c3d50704","/assets/message-8900d7a9.jpg":"1b23be2ed2b9bb208a28e84335f82ad3f9e30c1391e4d37a5f8e7529f5cd1b24","/assets/banner2-400d8ed5.jpg":"2158cb9aa80ba5f265ee6f492d0dec5b195fce4b45e5e56658a191ced5a2debf","/assets/logo-2282c89c.jpg":"1b06137c23fcd0d7a363f8aa5133523feade055ca0f1f6436be5994aa5f6b260","/assets/banner3-1dc7862f.jpg":"f48487d9d1c6bbc302cd8d2ea28fc9a7f007a05ebf69f77bcab3aacb17624203","/assets/banner1-878f533c.jpg":"f2f7a51f24d3357c4a0086974470a15aa098aef76652b5365a4ca860b812147c","/assets/banner4-74d588a2.jpg":"aee3cef6d156047e56bdcb4390617208bc8e7fa145e269de0bb0784730aba430","/assets/index-57ef0d60.js":"c7f19e642e09c7faa24c4756b0bd6a339bfe6dbb15817a5b5c3d7e532fd18650","/assets/accordion -a21644f3.jpg":"fa2a686bc03b57b648bf5773d868131f1b1126e67512ed612a61c978abae4337","/assets/404-9202b155.gif":"f1c39464ff074bb7cc4f0bf6f6149b0702a2db1a767f1fd842cc822608c291a1"}}
+[debug] [2023-06-12T17:14:48.927Z] [populateQueue] Retrying task index 0
+[debug] [2023-06-12T17:14:48.930Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a:populateFiles [none]
+[debug] [2023-06-12T17:14:48.930Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a:populateFiles {"files":{"/courses.json":"38182fd7c959bbf3ba47b0e9ec5765f08ccc83a14b2d3ebefe576212f7675443","/vite.svg":"59ec4b6085a0cb1bf712a5e48dd5f35b08e34830d49c2026c18241be04e05d5a","/index.html":"b042f19dfb6744df1d291e2f33b322103cbd5689987b9626b8128b0397616be1","/assets/like-5db0682c.jpg":"5071ab650c2a96a1ec4f6f407305c2577e2ee18be8253e50dc36a3ba5a6e787d","/assets/phone-fd092916.jpg":"21dee721a4203f941db962b0b20ef3bc7383dbed84dac8884966542de502da52","/assets/index-7869b148.css":"2e2ada3e6708f387a617430e10af357fb943e932669c54a3364a22c4020d485c","/assets/setting-3a9acebd.jpg":"64481b9e9be51fd6369f8d1fd62d71ce5ccafe537fcadc139f6e7f57c3d50704","/assets/message-8900d7a9.jpg":"1b23be2ed2b9bb208a28e84335f82ad3f9e30c1391e4d37a5f8e7529f5cd1b24","/assets/banner2-400d8ed5.jpg":"2158cb9aa80ba5f265ee6f492d0dec5b195fce4b45e5e56658a191ced5a2debf","/assets/logo-2282c89c.jpg":"1b06137c23fcd0d7a363f8aa5133523feade055ca0f1f6436be5994aa5f6b260","/assets/banner3-1dc7862f.jpg":"f48487d9d1c6bbc302cd8d2ea28fc9a7f007a05ebf69f77bcab3aacb17624203","/assets/banner1-878f533c.jpg":"f2f7a51f24d3357c4a0086974470a15aa098aef76652b5365a4ca860b812147c","/assets/banner4-74d588a2.jpg":"aee3cef6d156047e56bdcb4390617208bc8e7fa145e269de0bb0784730aba430","/assets/index-57ef0d60.js":"c7f19e642e09c7faa24c4756b0bd6a339bfe6dbb15817a5b5c3d7e532fd18650","/assets/accordion -a21644f3.jpg":"fa2a686bc03b57b648bf5773d868131f1b1126e67512ed612a61c978abae4337","/assets/404-9202b155.gif":"f1c39464ff074bb7cc4f0bf6f6149b0702a2db1a767f1fd842cc822608c291a1"}}
+[debug] [2023-06-12T17:14:50.431Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a:populateFiles 200
+[debug] [2023-06-12T17:14:50.431Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a:populateFiles {"uploadUrl":"https://upload-firebasehosting.googleapis.com/upload/sites/azraelle-language-camp/versions/49cae7c26667836a/files"}
+[debug] [2023-06-12T17:14:50.432Z] [hosting][populate queue][FINAL] {"max":1504,"min":1504,"avg":1504,"active":0,"complete":1,"success":1,"errored":0,"retried":1,"total":1,"elapsed":22971}
+[debug] [2023-06-12T17:14:50.432Z] [hosting] uploads queued: 0
+[debug] [2023-06-12T17:14:50.433Z] [hosting][upload queue][FINAL] {"max":0,"min":9999999999,"avg":0,"active":0,"complete":0,"success":0,"errored":0,"retried":0,"total":0,"elapsed":1686590090433}
+[info] +  hosting[azraelle-language-camp]: file upload complete 
+[debug] [2023-06-12T17:14:50.436Z] [hosting] deploy completed after 23258ms
+[debug] [2023-06-12T17:14:50.442Z] [
+  {
+    "config": {
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "azraelle-language-camp"
+    },
+    "version": "projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a"
+  }
+]
+[info] i  hosting[azraelle-language-camp]: finalizing version... 
+[debug] [2023-06-12T17:14:50.448Z] >>> [apiv2][query] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions/49cae7c26667836a updateMask=status%2Cconfig
+[debug] [2023-06-12T17:14:50.448Z] >>> [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions/49cae7c26667836a {"status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]}}
+[debug] [2023-06-12T17:14:51.734Z] <<< [apiv2][status] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions/49cae7c26667836a 200
+[debug] [2023-06-12T17:14:51.734Z] <<< [apiv2][body] PATCH https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/versions/49cae7c26667836a {"name":"projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-06-12T17:14:27.848132Z","createUser":{"email":"Tamzid620@gmail.com"},"finalizeTime":"2023-06-12T17:14:52.672948Z","finalizeUser":{"email":"Tamzid620@gmail.com"}}
+[debug] [2023-06-12T17:14:51.735Z] [hosting] finalized version for azraelle-language-camp:[object Object]
+[info] +  hosting[azraelle-language-camp]: version finalized 
+[info] i  hosting[azraelle-language-camp]: releasing new version... 
+[debug] [2023-06-12T17:14:51.740Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/channels/live/releases versionName=projects%2F777678993594%2Fsites%2Fazraelle-language-camp%2Fversions%2F49cae7c26667836a
+[debug] [2023-06-12T17:14:51.740Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/channels/live/releases {}
+[debug] [2023-06-12T17:14:53.094Z] <<< [apiv2][status] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/channels/live/releases 200
+[debug] [2023-06-12T17:14:53.094Z] <<< [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/azraelle-language-camp/channels/live/releases {"name":"projects/777678993594/sites/azraelle-language-camp/channels/live/releases/1686590093444000","version":{"name":"projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-06-12T17:14:27.848132Z","createUser":{"email":"Tamzid620@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtcvox7_qn-byRMESSmrxTQVlo6b2oT5NUlj3pT7Gg"},"finalizeTime":"2023-06-12T17:14:52.672948Z","finalizeUser":{"email":"Tamzid620@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtcvox7_qn-byRMESSmrxTQVlo6b2oT5NUlj3pT7Gg"}},"type":"DEPLOY","releaseTime":"2023-06-12T17:14:53.444Z","releaseUser":{"email":"Tamzid620@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtcvox7_qn-byRMESSmrxTQVlo6b2oT5NUlj3pT7Gg"}}
+[debug] [2023-06-12T17:14:53.095Z] [hosting] release: {"name":"projects/777678993594/sites/azraelle-language-camp/channels/live/releases/1686590093444000","version":{"name":"projects/777678993594/sites/azraelle-language-camp/versions/49cae7c26667836a","status":"FINALIZED","config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"},"createTime":"2023-06-12T17:14:27.848132Z","createUser":{"email":"Tamzid620@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtcvox7_qn-byRMESSmrxTQVlo6b2oT5NUlj3pT7Gg"},"finalizeTime":"2023-06-12T17:14:52.672948Z","finalizeUser":{"email":"Tamzid620@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtcvox7_qn-byRMESSmrxTQVlo6b2oT5NUlj3pT7Gg"}},"type":"DEPLOY","releaseTime":"2023-06-12T17:14:53.444Z","releaseUser":{"email":"Tamzid620@gmail.com","imageUrl":"https://lh3.googleusercontent.com/a/AAcHTtcvox7_qn-byRMESSmrxTQVlo6b2oT5NUlj3pT7Gg"}}
+[info] +  hosting[azraelle-language-camp]: release complete 
+[info] 
+[info] +  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/azraelle-language-camp/overview
+[info] Hosting URL: https://azraelle-language-camp.web.app
+[debug] [2023-06-12T17:15:03.638Z] Error: Timed out.
+    at Timeout._onTimeout (C:\Users\abc\AppData\Roaming\npm\node_modules\firebase-tools\lib\utils.js:253:49)
+    at listOnTimeout (node:internal/timers:569:17)
+    at process.processTimers (node:internal/timers:512:7)
+[error] 
+[error] Error: An unexpected error has occurred.

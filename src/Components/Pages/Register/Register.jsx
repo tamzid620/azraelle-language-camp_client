@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import {
   GoogleAuthProvider,
@@ -20,6 +20,7 @@ const auth = getAuth();
 const Register = () => {
   useTitle("Register");
 
+  const navigate = useNavigate();
   const { googleSignIn } = useContext(AuthContext);
   const {
     register,
@@ -33,14 +34,14 @@ const Register = () => {
   // Email and Password SignUp ----------------------------------
   const onSubmit = (data) => {
     const { email, password, name, photoUrl } = data;
-    console.log(data);
+    // console.log(data);
 
     if (email && password) {
-      console.log(email, password);
+      // console.log(email, password);
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user, userCredential);
+          // console.log(user, userCredential);
 
           updateProfile(auth.currentUser, {
             displayName: name,
@@ -60,14 +61,15 @@ const Register = () => {
                       showConfirmButton: false,
                       timer: 1500,
                     });
+                    navigate('/login') ;
                   }
                 })
                 .catch((error) => {
-                  console.log(error.message);
+                  // console.log(error.message);
                 });
             })
             .catch((error) => {
-              console.log(error.message);
+              // console.log(error.message);
             });
         })
         .catch((error) => {
@@ -98,6 +100,7 @@ const Register = () => {
           showConfirmButton: false,
           timer: 1500,
         });
+        navigate('/login') ;
       })
       .catch((error) => {
         const errorCode = error.code;

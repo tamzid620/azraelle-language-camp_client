@@ -1,17 +1,5 @@
 ➊ Website name  :  Azraelle-Language-Camp
 
-➋website features:
-        ‣ IN homepaghe you can see our classes gallery and popular instructor also some informaiton about our camp and it also have responsive design 
-
-        ‣ In classes section in navbar you can see out classes infomation like class name , class price , instructor name , email  . also you can select class .this will book specific class 
-        
-        ‣ in instructor page in navbar you can see our instructor informartion like email, name , class name  etc
-
-        ‣ In dashboard  if you login as admin you can control the whole page like manage users and manage classes
-
-        ‣ if you login as instructor you can add class and show what you added in my class menu
-        ‣we have login and registration option so you need to must login or registration for visit out page
-
 ➌ Used packages/ technology name :
    =>  in client site ------------
         ‣ react motion 
@@ -41,3 +29,8 @@ color code : dark blue: #004C7F ;
 
  fixed top-0 z-50
  lg:mt-[83px] md:mt-[60px] sm: mt-[83px]
+
+
+-----------------------------------
+user: admin@test.com
+password: 06J@nyu@ry2@25

@@ -18,7 +18,7 @@ const PopularClasses = () => {
         <div  className="lg:mx-0 md:mx-4 sm: mx-6 mt-20">
             <h1 style={{ fontFamily: "Nunito Sans, serif" }}
              className="flex justify-center font-extrabold text-3xl uppercase">Popular Classes</h1>
-            <div className="p-5 rounded-e-sm grid lg:grid-cols-3 md:grid-cols-2 sm: grid-cols-1 ">
+            <div className="p-5 rounded-e-sm grid lg:grid-cols-3 md:grid-cols-2 sm: grid-cols-1 gap-5">
                 {
                     classes.map((classItem) => (
                         <div className=" p-2" key={classItem?._id}>
