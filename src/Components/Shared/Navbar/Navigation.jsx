@@ -58,7 +58,7 @@ const Navigation = () => {
   return (
     <nav
         style={{ fontFamily: "Nunito Sans, serif" }}
-        className="bg-[#004C7F] shadow-gray-900 py-1 w-full"
+        className="bg-[#004C7F] shadow-gray-900 py-1 w-full z-10"
       >
         <div className=" xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm mx-auto">
           {/* nav for large device  */}
@@ -123,7 +123,7 @@ const Navigation = () => {
               </div>
             </div>
 {/* 88888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */}
-            <div className="lg:hidden md:block sm: block">
+            <div className="lg:hidden md:block sm: block z-10">
             <div onClick={handleMenuOpen}>
               <img
                 className="w-[25px] drop-shadow-xl relative"
@@ -132,7 +132,7 @@ const Navigation = () => {
               />
             </div>
             {menuOpen ? (
-              <div className=" absolute top-[60px] left-0 flex justify-center items-center text-center bg-blue-600 w-full py-1 border-t-2 border-gray-500">
+              <div className=" absolute top-[80px] left-0 flex justify-center items-center text-center bg-[#347199] w-full py-1 border-t-2 border-gray-500 shadow-lg shadow-black">
                 <ul className=" uppercase font-bold text-sm leading-[60px]">
                   <Link to="/">
                     <li>Home</li>

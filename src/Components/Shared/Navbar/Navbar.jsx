@@ -136,7 +136,7 @@ const Navbar = () => {
               />
             </div>
             {menuOpen ? (
-              <div className=" absolute top-[60px] left-0 flex justify-center items-center text-center bg-blue-600 w-full py-1 border-t-2 border-gray-500">
+              <div className=" absolute top-[60px] left-0 flex justify-center items-center text-center bg-blue-800 w-full py-1 border-t-2 border-gray-500">
                 <ul className=" uppercase font-bold text-sm leading-[60px]">
                   <Link to="/">
                     <li>Home</li>
