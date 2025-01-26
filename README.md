@@ -20,8 +20,6 @@
         ‣ mongodb atlas
         ‣ enviroment variable
 
-➍Live site link : https://azraelle-language-camp.web.app/
-
 color code : light blue: #C5F5FF;
 color code : dark blue: #004C7F ;
   style={{fontFamily: "Nunito Sans, serif"}}
@@ -35,4 +33,4 @@ color code : dark blue: #004C7F ;
 user: admin@test.com
 password: 06J@nyu@ry2@25
 -----------------------------------
-Live Site Visit Link: https://azraelle-language-club.netlify.app/
+➍ Live Site Visit Link: https://azraelle-language-club.netlify.app/
