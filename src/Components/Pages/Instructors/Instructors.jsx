@@ -23,7 +23,7 @@ const Instructors = () => {
   };
 
   return (
-    <div className="xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm lg:mx-auto md:mx-4 sm: mx-4">
+    <div className="xl:max-w-7xl lg:max-w-6xl md:max-w-3xl sm: max-w-sm lg:mx-auto md:mx-4 sm: mx-4 ">
       <h1
         style={{ fontFamily: "Nunito Sans, serif" }}
         className="flex justify-center font-extrabold text-3xl text-[#004C7F] uppercase mt-20"
